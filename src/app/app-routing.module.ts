@@ -20,6 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/choose-page/choose-page.module').then( m => m.ChoosePagePageModule)
   },
   
+  
 
 ];
 
