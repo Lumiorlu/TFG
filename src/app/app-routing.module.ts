@@ -19,6 +19,18 @@ const routes: Routes = [
     path: 'choose-page',
     loadChildren: () => import('./pages/choose-page/choose-page.module').then( m => m.ChoosePagePageModule)
   },
+  {
+    path: 'manga-page',
+    loadChildren: () => import('./pages/manga-page/manga-page.module').then( m => m.MangaPagePageModule)
+  },
+  {
+    path: 'comic-page',
+    loadChildren: () => import('./pages/comic-page/comic-page.module').then( m => m.ComicPagePageModule)
+  },
+  {
+    path: 'option-page',
+    loadChildren: () => import('./pages/option-page/option-page.module').then( m => m.OptionPagePageModule)
+  },
   
   
 
