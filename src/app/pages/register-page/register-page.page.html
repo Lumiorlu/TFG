@@ -7,6 +7,48 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  
+  <ion-item>
+    <ion-input type="text" placeholder="Nombre"></ion-input>
+    <ion-icon slot="start" name="person"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Apellidos"></ion-input>
+    <ion-icon slot="start" name="person"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Nombre de Usuario"></ion-input>
+    <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Correo Electrónico"></ion-input>
+    <ion-icon slot="start" name="mail"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" placeholder="Contraseña"></ion-input>
+    <ion-icon slot="start" name="key"></ion-icon>
+  </ion-item>
+
+  <ion-text color="grey">
+    <h6>Año y día de nacimiento</h6 >
+  </ion-text>
+
+  <ion-item>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-item>
+        <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+      </ion-item>
+    </ion-item>
+  </ion-item>
+
+  <ion-button (click)="onClick()" expand="block" shape="round" routerLink="/login-page" >
+    Continuar
+  </ion-button>
 
 </ion-content>
