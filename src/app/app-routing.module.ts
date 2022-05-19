@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'option-page',
     loadChildren: () => import('./pages/option-page/option-page.module').then( m => m.OptionPagePageModule)
   },
+  {
+    path: 'register-page',
+    loadChildren: () => import('./pages/register-page/register-page.module').then( m => m.RegisterPagePageModule)
+  },
   
   
 
