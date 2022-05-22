@@ -17,4 +17,5 @@ export class MangaPagePage implements OnInit {
     this.menuController.open('first');
   }
 
+
 }
