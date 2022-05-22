@@ -12,4 +12,6 @@ export class ComicPagePage implements OnInit {
   ngOnInit() {
   }
 
+  
+
 }
