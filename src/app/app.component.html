@@ -1,3 +1,39 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+
+        <ion-menu-toggle>
+
+          <ion-button (click)="onClick()" expand="block" fill="solid" shape="round" routerLink="/comic-page">
+            Ir a Comics
+          </ion-button>
+
+          <ion-button (click)="onClick()" expand="block" fill="" shape="round" routerLink="/library-page">
+            Biblioteca
+          </ion-button>
+
+          <ion-button (click)="onClick()" expand="block" fill="" shape="round" routerLink="/favorites-page">
+            Favoritos
+          </ion-button>
+
+          <ion-button (click)="onClick()" expand="block" fill="" shape="round" routerLink="option-page">
+            Ajustes
+          </ion-button>
+
+        </ion-menu-toggle>
+
+
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
