@@ -8,13 +8,21 @@ import { MenuController } from '@ionic/angular';
 })
 export class MangaPagePage implements OnInit {
 
+<<<<<<< HEAD
   constructor(private menuController: MenuController) { }
+=======
+  constructor(private menuController:MenuController) { }
+>>>>>>> feature/adrian
 
   ngOnInit() {
   }
 
   mostrarMenu(){
+<<<<<<< HEAD
   this.menuController.open('first');
+=======
+    this.menuController.open('first');
+>>>>>>> feature/adrian
   }
 
 }

@@ -35,6 +35,14 @@ const routes: Routes = [
     path: 'register-page',
     loadChildren: () => import('./pages/register-page/register-page.module').then( m => m.RegisterPagePageModule)
   },
+  {
+    path: 'favorites-page',
+    loadChildren: () => import('./pages/favorites-page/favorites-page.module').then( m => m.FavoritesPagePageModule)
+  },
+  {
+    path: 'library-page',
+    loadChildren: () => import('./pages/library-page/library-page.module').then( m => m.LibraryPagePageModule)
+  },
   
   
 
