@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-manga-page',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MangaPagePage implements OnInit {
 
-  constructor() { }
+  constructor(private menuController:MenuController) { }
 
   ngOnInit() {
+  }
+
+  mostrarMenu(){
+    this.menuController.open('first');
   }
 
 }
