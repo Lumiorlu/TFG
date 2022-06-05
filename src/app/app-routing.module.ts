@@ -1,57 +1,89 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {
+  redirectUnauthorizedTo,
+  redirectLoggedInTo,
+  canActivate,
+} from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () =>
+      import('./home/home.module').then((m) => m.HomePageModule),
+      //...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'login-page',
-    loadChildren: () => import('./pages/login-page/login-page.module').then( m => m.LoginPagePageModule)
+    loadChildren: () =>
+      import('./login-page/login-page.module').then(
+        (m) => m.LoginPagePageModule
+      ),
+      //...canActivate(redirectLoggedInToHome), 
   },
   {
     path: 'choose-page',
-    loadChildren: () => import('./pages/choose-page/choose-page.module').then( m => m.ChoosePagePageModule)
+    loadChildren: () =>
+      import('./choose-page/choose-page.module').then(
+        (m) => m.ChoosePagePageModule
+      ),
   },
   {
     path: 'manga-page',
-    loadChildren: () => import('./pages/manga-page/manga-page.module').then( m => m.MangaPagePageModule)
+    loadChildren: () =>
+      import('./manga-page/manga-page.module').then(
+        (m) => m.MangaPagePageModule
+      ),
   },
   {
     path: 'comic-page',
-    loadChildren: () => import('./pages/comic-page/comic-page.module').then( m => m.ComicPagePageModule)
+    loadChildren: () =>
+      import('./comic-page/comic-page.module').then(
+        (m) => m.ComicPagePageModule
+      ),
   },
   {
     path: 'option-page',
-    loadChildren: () => import('./pages/option-page/option-page.module').then( m => m.OptionPagePageModule)
+    loadChildren: () =>
+      import('./option-page/option-page.module').then(
+        (m) => m.OptionPagePageModule
+      ),
   },
   {
     path: 'register-page',
-    loadChildren: () => import('./pages/register-page/register-page.module').then( m => m.RegisterPagePageModule)
+    loadChildren: () =>
+      import('./register-page/register-page.module').then(
+        (m) => m.RegisterPagePageModule
+      ),
   },
   {
     path: 'favorites-page',
-    loadChildren: () => import('./pages/favorites-page/favorites-page.module').then( m => m.FavoritesPagePageModule)
+    loadChildren: () =>
+      import('./favorites-page/favorites-page.module').then(
+        (m) => m.FavoritesPagePageModule
+      ),
   },
   {
     path: 'library-page',
-    loadChildren: () => import('./pages/library-page/library-page.module').then( m => m.LibraryPagePageModule)
+    loadChildren: () =>
+      import('./library-page/library-page.module').then(
+        (m) => m.LibraryPagePageModule
+      ),
   },
-  
-  
-
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
