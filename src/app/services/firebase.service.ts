@@ -4,7 +4,7 @@ import firebase from 'firebase/compat';
 import 'firebase/compat/storage';
 import { environment } from '../../environments/environment.prod';
 
-firebase.initializeApp(environment.firebase)
+
 
 @Injectable({
   providedIn: 'root'
