@@ -1,19 +1,3 @@
-/*import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-register-page',
-  templateUrl: './register-page.page.html',
-  styleUrls: ['./register-page.page.scss'],
-})
-export class RegisterPagePage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}*/
-
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -21,8 +5,8 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
+  templateUrl: './register-page.page.html',
+  styleUrls: ['./register-page.page.scss'],
 })
 export class RegisterPage implements OnInit {
   userForm: FormGroup;
