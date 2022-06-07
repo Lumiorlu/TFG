@@ -1,6 +1,7 @@
 <ion-toolbar>
   <ion-buttons slot="start">
     <ion-menu-button meu="main-content"></ion-menu-button>
+    <!-- <ion-menu-button auto-hide='false' menu="second"></ion-menu-button> -->
   </ion-buttons>
 
   <ion-title>Cómics</ion-title>
@@ -13,44 +14,57 @@
   [debounce]="250"
 ></ion-searchbar>
 
-<ion-content>
-  <h1>Titulo</h1>
-  <ion-slides>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-  </ion-slides>
+<ion-content class="ion-padding">
+  <ion-row>
+    <ion-col
+      size="12"
+      size-lg="3"
+      size-md="4"
+      size-sm="6"
+      size-xs="12"
+    ></ion-col>
 
-  <h1>Titulo</h1>
-  <ion-slides>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-  </ion-slides>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Venom funeral pyre</ion-card-title>
+        <img src="assets/icon/imagenVenomyPunisher.jpg" />
+      </ion-card-header>
 
-  <h1>Titulo</h1>
-  <ion-slides>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-  </ion-slides>
+      <ion-card-content>
+        Punisher y Venom se unen en una aventura, están en el mismo lado de la
+        pelea contra una pandilla de California que amenaza a la ciudad.
+      </ion-card-content>
+      <ion-card>
+        <ion-item>
+          <ion-icon slot="start" name="eye"></ion-icon>
+          <ion-button fill="outline" slot="end">Ver</ion-button>
+        </ion-item>
 
-  <h1>Titulo</h1>
-  <ion-slides>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-  </ion-slides>
+        //TODO Hacer que funcione el botón de Ver
+      </ion-card>
+    </ion-card>
 
-  <h1>Titulo</h1>
-  <ion-slides>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-    <h3>Awesome Slide Content</h3>
-  </ion-slides>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Batman: Night of the Monster Men</ion-card-title>
+        <img src="assets/icon/batman.jpg" />
+      </ion-card-header>
+
+      <ion-card-content>
+        Cuando una gran tormenta se acerca a Gotham City, Batman, Batwoman y
+        Nightwing intentan prepararse para lo peor, ¡Pero nada puede prepararlos
+        para enormes monstruos que arrasan las calles! ¡Batman necesitará que
+        todos sus aliados se unan para evitar que estos monstruos científicos
+        locos destrocen su ciudad! ¿Serán suficientes el Caballero Oscuro,
+        Batwoman, Nightwing, Robin, Spoiler, Orphan y Clayface? ¿Y quién es el
+        cerebro detrás de todo esto?
+      </ion-card-content>
+      <ion-card>
+        <ion-item>
+          <ion-icon slot="start" name="eye"></ion-icon>
+          <ion-button fill="outline" slot="end">Ver</ion-button>
+        </ion-item>
+      </ion-card>
+    </ion-card>
+  </ion-row>
 </ion-content>

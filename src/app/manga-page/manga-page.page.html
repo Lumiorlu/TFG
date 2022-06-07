@@ -15,44 +15,54 @@
   ></ion-searchbar>
 
   <ion-content>
-    <h1>Titulo</h1>
-    <ion-slides>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-    </ion-slides>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Berserk</ion-card-title>
+        <img src="assets/icon/berserk_1_2.jpg" />
+      </ion-card-header>
 
-    <h1>Titulo</h1>
-    <ion-slides>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-    </ion-slides>
+      <ion-card-content>
+        La historia está ambientada en una época con tintes de la Europa
+        medieval y renacentista, en la cual se cuenta la vida de Guts, un
+        mercenario huérfano que acompañado del elfo Puck, caza seres demoníacos
+        llamados apóstoles.
+      </ion-card-content>
 
-    <h1>Titulo</h1>
-    <ion-slides>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-    </ion-slides>
+      <ion-card>
+        <ion-item>
+          <ion-icon slot="start" name="eye"></ion-icon>
+          <ion-button fill="outline" slot="end">Ver</ion-button>
+        </ion-item>
+      </ion-card>
+    </ion-card>
 
-    <h1>Titulo</h1>
-    <ion-slides>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-    </ion-slides>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Fairy Tail</ion-card-title>
+        <img src="assets/icon/fairy_tail_1_4.jpg" />
+      </ion-card-header>
 
-    <h1>Titulo</h1>
-    <ion-slides>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-      <h3>Awesome Slide Content</h3>
-    </ion-slides>
+      <ion-card-content>
+        La serie relata las aventuras del joven mago Natsu Dragneel y su gato
+        parlante Happy que viajan juntos en busca del d ragón Igneel, el cual
+        Natsu declara que es su padre adoptivo, hasta que un día conocen a una
+        chica llamada Lucy Heartfilia, una maga de espíritus celestiales.
+      </ion-card-content>
+      <ion-card>
+        <ion-item>
+          <ion-icon slot="start" name="eye"></ion-icon>
+          <ion-button fill="outline" slot="end">Ver</ion-button>
+        </ion-item>
+      </ion-card>
+    </ion-card>
+
+    <!--<input type="file" (change)="uploadImage($event)">
+
+
+<!--<div class="imagenes">
+  <ion-img [src]="img" *ngFor="let img of imagenes" width="200"></ion-img>
+</div>-->
   </ion-content>
+
+  TODO Hacer que el botón Ver funcione
 </ion-app>

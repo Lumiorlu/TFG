@@ -78,6 +78,10 @@ const routes: Routes = [
         (m) => m.LibraryPagePageModule
       ),
   },
+  {
+    path: 'upload-files',
+    loadChildren: () => import('./upload-files/upload-files.module').then( m => m.UploadFilesPageModule)
+  },
 ];
 
 @NgModule({
