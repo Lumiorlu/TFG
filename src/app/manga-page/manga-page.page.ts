@@ -1,21 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { getDownloadURL, listAll, ref, uploadBytes } from '@angular/fire/storage';
+import { Storage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-manga-page',
   templateUrl: './manga-page.page.html',
   styleUrls: ['./manga-page.page.scss'],
 })
-export class MangaPagePage implements OnInit {
+export class MangaPagePage{
 
-  constructor(private menuController:MenuController) { }
+  imagenes: string[];
 
-  ngOnInit() {
+  constructor(private storage: Storage){
+    this.imagenes=[];
+  };
+
+  ngOnInit(){
+    this.getImages();
   }
 
-  mostrarMenu(){
-    this.menuController.open('first');
-  }
+ uploadImage($event:any){
+  const file=$event.target.files[0];
+  console.log(file);
 
+  const imgRef = ref(this.storage, `Mangas/Berserk/${file.name}`);
+
+  uploadBytes(imgRef, file).then(resp => console.log(resp)).catch(err =>console.log(err))
+
+ }
+
+ getImages(){
+   const imagesRef=ref(this.storage, 'Mangas/Berserk');
+   listAll(imagesRef).then(async resp => {
+     console.log(resp);
+     this.imagenes=[];
+     for(let item of resp.items){
+       const url= await getDownloadURL(item);
+       this.imagenes.push(url);
+     }
+   }).catch(err=> console.log(err));
+   
+ }
 
 }
