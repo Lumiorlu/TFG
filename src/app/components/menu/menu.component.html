@@ -1,3 +1,53 @@
+<!-- <ion-menu side="start" menuId="" contentId="main">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+        <ion-button
+          expand="block"
+          fill="solid"
+          shape="round"
+          routerLink="/comic-page"
+        >
+          Ir a Comics
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          fill=""
+          shape="round"
+          routerLink="/library-page"
+        >
+          Biblioteca
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          fill=""
+          shape="round"
+          routerLink="/favorites-page"
+        >
+          Favoritos
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          fill=""
+          shape="round"
+          routerLink="/option-page"
+        >
+          Ajustes
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu> -->
+
+
 <ion-menu side="start" menuId="first" contentId="main">
   <ion-header>
     <ion-toolbar color="primary">
@@ -6,29 +56,47 @@
   </ion-header>
   <ion-content>
     <ion-list>
-
-      <ion-menu-toggle>
-
-        <ion-button (click)="onClick()" expand="block" fill="solid" shape="round" routerLink="/comic-page">
-          Ir a Comics
-        </ion-button>
-
-        <ion-button (click)="onClick()" expand="block" fill="" shape="round" routerLink="/library-page">
-          Biblioteca
-        </ion-button>
-
-        <ion-button (click)="onClick()" expand="block" fill="" shape="round" routerLink="/favorites-page">
-          Favoritos
-        </ion-button>
-
-        <ion-button (click)="onClick()" expand="block" fill="" shape="round" routerLink="/option-page">
-          Ajustes
-        </ion-button>
-
-      </ion-menu-toggle>
-
-
-
+      <ion-button routerLink="/favorites-page">Cómics</ion-button>
+      <ion-button routerLink="/favorites-page">Menu Item</ion-button>
+      <ion-button routerLink="/favorites-page">Menu Item</ion-button>
+      <ion-button routerLink="/favorites-page">Menu Item</ion-button>
+      <ion-button routerLink="/favorites-page">Menu Item</ion-button>
     </ion-list>
   </ion-content>
 </ion-menu>
+
+<ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title>Custom Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-button routerLink="/favorites-page">Mangas</ion-button>
+      <ion-button routerLink="/favorites-page">Menu Item</ion-button>
+      <ion-button routerLink="/favorites-page">Menu Item</ion-button>
+      <ion-button routerLink="/favorites-page">Menu Item</ion-button>
+      <ion-button routerLink="/favorites-page">Menu Item</ion-button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu side="end" type="push" contentId="main">
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>End Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="main"></ion-router-outlet>

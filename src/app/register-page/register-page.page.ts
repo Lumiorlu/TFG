@@ -13,6 +13,13 @@ export class RegisterPage implements OnInit {
   successMsg = '';
   errorMsg = '';
 
+  get email() {
+    return this.userForm.get('email');
+  }
+ 
+  get password() {
+    return this.userForm.get('password');
+  }
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
   error_msg = {
@@ -33,7 +40,7 @@ export class RegisterPage implements OnInit {
       },
       {
         type: 'minlength',
-        message: 'Password length should be 6 characters long.'
+        message: 'Password length should be 8 characters long.'
       }
     ]
   };
@@ -51,7 +58,7 @@ export class RegisterPage implements OnInit {
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
       password: new FormControl('', Validators.compose([
-        Validators.minLength(6),
+        Validators.minLength(8),
         Validators.required
       ])),
     });
