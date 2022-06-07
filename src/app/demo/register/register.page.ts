@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login-page.page.html',
-  styleUrls: ['./login-page.page.scss'],
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
 })
-export class LoginPage implements OnInit {
-
+export class RegisterPage implements OnInit {
   userForm: FormGroup;
   successMsg = '';
   errorMsg = '';
+
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
   error_msg = {
@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
       },
       {
         type: 'minlength',
-        message: 'Password length should be 8 characters long.'
+        message: 'Password length should be 6 characters long.'
       }
     ]
   };
@@ -57,20 +57,19 @@ export class LoginPage implements OnInit {
     });
   }
 
-  signIn(value) {
-    this.authService.signinUser(value)
+  signUp(value) {
+    this.authService.createUser(value)
       .then((response) => {
-        console.log(response);
         this.errorMsg = '';
-        this.router.navigate(['/choose-page']);
+        this.successMsg = 'New user created.';
       }, error => {
         this.errorMsg = error.message;
         this.successMsg = '';
       });
   }
 
-  goToSignup() {
-    this.router.navigate(['/home']);
+  goToLogin() {
+    this.router.navigate(['/demo/loging']);
   }
 
 }

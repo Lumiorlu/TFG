@@ -8,46 +8,87 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  
-  <ion-item>
-    <ion-input type="text" placeholder="Nombre"></ion-input>
-    <ion-icon slot="start" name="person"></ion-icon>
-  </ion-item>
+  <form class="form" [formGroup]="userForm" (ngSubmit)="signUp(userForm.value)">
 
-  <ion-item>
-    <ion-input type="text" placeholder="Apellidos"></ion-input>
-    <ion-icon slot="start" name="person"></ion-icon>
-  </ion-item>
+    <!-- <ion-item>
+      <ion-input type="text" placeholder="Nombre" formControlName="name"></ion-input>
+      <ion-icon slot="start" name="person"></ion-icon>
+    </ion-item>
 
-  <ion-item>
-    <ion-input type="text" placeholder="Nombre de Usuario"></ion-input>
-    <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-  </ion-item>
+    <ng-container *ngFor="let error of error_msg.name">
+      <div
+        *ngIf="userForm.get('name').hasError(error.type) && (userForm.get('name').dirty || userForm.get('name').touched)"
+      >
+        {{ error.message }}
+      </div>
+    </ng-container>
 
-  <ion-item>
-    <ion-input type="text" placeholder="Correo Electrónico"></ion-input>
-    <ion-icon slot="start" name="mail"></ion-icon>
-  </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Apellidos" formControlName="lastname"></ion-input>
+      <ion-icon slot="start" name="person"></ion-icon>
+    </ion-item>
 
-  <ion-item>
-    <ion-input type="password" placeholder="Contraseña"></ion-input>
-    <ion-icon slot="start" name="key"></ion-icon>
-  </ion-item>
+    <ng-container *ngFor="let error of error_msg.lastname">
+      <div
+        *ngIf="userForm.get('lastname').hasError(error.type) && (userForm.get('lastname').dirty || userForm.get('lastname').touched)"
+      >
+        {{ error.message }}
+      </div>
+    </ng-container>
+    
+    <ion-item>
+      <ion-input type="text" placeholder="Nombre de Usuario" formControlName="username"></ion-input>
+      <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+    </ion-item>
 
-  <ion-text color="grey">
-    <h6>Año y día de nacimiento</h6 >
-  </ion-text>
+    <ng-container *ngFor="let error of error_msg.username">
+      <div
+        *ngIf="userForm.get('username').hasError(error.type) && (userForm.get('username').dirty || userForm.get('username').touched)"
+      >
+        {{ error.message }}
+      </div>
+    </ng-container> -->
 
-  <ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Correo Electrónico" formControlName="email"></ion-input>
+      <ion-icon slot="start" name="mail"></ion-icon>
+    </ion-item>
+
+    <ng-container *ngFor="let error of error_msg.email">
+      <div
+        *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)"
+      >
+        {{ error.message }}
+      </div>
+    </ng-container>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+      <ion-icon slot="start" name="key"></ion-icon>
+    </ion-item>
+
+    <ng-container *ngFor="let error of error_msg.password">
+      <div
+        *ngIf="userForm.get('password').hasError(error.type) && (userForm.get('password').dirty || userForm.get('password').touched)"
+      >
+        {{ error.message }}
+      </div>
+    </ng-container>
+
+    <!-- <ion-text color="grey">
+      <h6>Año y día de nacimiento</h6>
+    </ion-text>
+
     <ion-item>
       <ion-item>
-        <ion-datetime display-format="YYYY-MM-DD"></ion-datetime>
+        <ion-item>
+          <ion-datetime display-format="YYYY-MM-DD" formControlName="date"></ion-datetime>
+        </ion-item>
       </ion-item>
-    </ion-item>
-  </ion-item>
+    </ion-item> -->
 
-  <ion-button  expand="block" shape="round" routerLink="/login-page" >
-    Continuar
-  </ion-button>
-
+    <ion-button shape="round" type="submit" expand="block" [disabled]="!userForm.valid" routerLink="/login-page">
+      Continuar
+    </ion-button>
+  </form>
 </ion-content>

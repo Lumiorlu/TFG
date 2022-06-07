@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Doctors App </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-button color="primary" routerLink="/demo/make-appointment"
+    >Make Appointment</ion-button
+  >
+  <ion-button color="primary" routerLink="/demo/register">Register</ion-button>
+  <ion-button color="primary" routerLink="/demo/login">Login</ion-button>
+  <ion-grid *ngIf="authService.user$ | async as user">
+    <ion-row>
+      <ion-col text-center>
+        Welcome User!
+
+        <p>User email : <strong>{{ user.email}}</strong></p>
+        <p>User permissions : <strong>{{ user.roles | json}}</strong></p>
+      </ion-col>
+    </ion-row>
+
+    <ion-button type="submit" color="danger" expand="block" (click)="logout()"
+      >Logout</ion-button
+    >
+  </ion-grid>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated"> Appointments </ion-list-header>
+    <ion-item *ngFor="let booking of bookings" class="user-list">
+      <ion-label>
+        <h5><ion-icon name="person"></ion-icon> {{booking.name}}</h5>
+        <p><ion-icon name="call"></ion-icon> {{booking.mobile}}</p>
+      </ion-label>
+      <div class="item-note" item-end>
+        <button
+          ion-button
+          clear
+          [routerLink]="['/demo','edit-appointment', booking.id]"
+        >
+          <ion-icon name="create" style="zoom: 2"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteBooking(booking.id)">
+          <ion-icon name="trash" style="zoom: 2"></ion-icon>
+        </button>
+      </div>
+    </ion-item> </ion-list
+></ion-content>
