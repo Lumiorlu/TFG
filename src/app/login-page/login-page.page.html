@@ -15,7 +15,12 @@
       <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">La contraseña necesita 6 carateres</ion-note>
     </ion-item>
  
+<<<<<<< HEAD
     <ion-button (click)="onClick()" type="submit" expand="block" [disabled]="!credentials.valid">Iniciar sesion</ion-button>
     <ion-button (click)="onClick()" type="button" expand="block" color="secondary" routerLink="/register-page">Crear una cuenta</ion-button>
+=======
+    <ion-button onclick="onClick()" type="submit" expand="block" [disabled]="!credentials.valid">Iniciar sesion</ion-button>
+    <ion-button type="button" expand="block" color="secondary" (click)="register()">Crear una cuenta</ion-button>
+>>>>>>> feature/adrian
   </form>
 </ion-content>
