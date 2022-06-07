@@ -62,7 +62,7 @@ export class LoginPage implements OnInit {
       .then((response) => {
         console.log(response);
         this.errorMsg = '';
-        this.router.navigate(['./home/home.page.html']);
+        this.router.navigate(['/home']);
       }, error => {
         this.errorMsg = error.message;
         this.successMsg = '';
@@ -70,7 +70,7 @@ export class LoginPage implements OnInit {
   }
 
   goToSignup() {
-    this.router.navigate(['./register-page/register-page.page.html']);
+    this.router.navigate(['/register-page']);
   }
 
 }
