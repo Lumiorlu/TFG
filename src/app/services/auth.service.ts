@@ -42,9 +42,9 @@ export class AuthService {
             console.log(res.user);
             // this.sendVerificationMail();
             this.setUserData(res.user),
-            /*customProperties:{
-              user
-            }*/
+            db.collection('users').doc<User>({
+              username: value.username,
+             }),
             resolve(res);
           },
           err => reject(err));

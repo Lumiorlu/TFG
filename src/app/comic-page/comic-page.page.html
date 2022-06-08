@@ -14,22 +14,55 @@
   [debounce]="250"
 ></ion-searchbar>
 
-<ion-content class="ion-padding">
-  <ion-row>
-    <ion-col size="12" size-lg="4" size-md="2" size-sm="6" size-xs="12">
-      <ion-card>
-        <img src="assets/icon/imagenVenomyPunisher.jpg" />
+<ion-content>
 
-        <ion-card-content>
-          <h1>Venom Funeral Pype</h1>
-          Punisher y Venom se unen en una aventura, están en el mismo lado de la
-          pelea contra una pandilla de California que amenaza a la ciudad.
-        </ion-card-content>
-        <ion-card>
-          <ion-item>
-            <ion-icon slot="start" name="cash-sharp"></ion-icon>
-            <ion-button fill="outline" slot="end">Comprar</ion-button>
-          </ion-item>
+  <ion-grid fixed>
+  <ion-row>
+    <ion-col size="12" size-lg="8" size-md="8" size-sm="6" size-xs="12">
+  <ion-card>
+      <img src="assets/icon/imagenVenomyPunisher.jpg">
+
+    <ion-card-content>
+     <h1>Venom Funeral Pype</h1>
+     <h1>Precio: 12€</h1> 
+      Punisher y Venom se unen en una aventura, 
+      están en el mismo lado de la pelea contra una pandilla de California que amenaza a la ciudad.
+    </ion-card-content>
+    <ion-card>
+      <ion-item>
+        <ion-button fill="outline" slot="end" routerLink="/pago-page">Comprar</ion-button>
+        <ion-button fill="outline" slot="end" routerLink="/pago-page">Leer</ion-button>
+      </ion-item>
+      
+//TODO Hacer que funcione el botón de Ver
+      
+    </ion-card>
+    
+  </ion-card>
+
+  <ion-card>
+      <img src="assets/icon/batman.jpg">
+    <ion-card-content>
+      <h1>Batman: Night of the Monster Men</h1>
+      <h1>Precio: 10€</h1>
+      Cuando una gran tormenta se acerca a Gotham City, Batman, Batwoman y Nightwing intentan prepararse para lo peor,
+     ¡Pero nada puede prepararlos para enormes monstruos que arrasan las calles! ¡Batman necesitará que todos sus aliados 
+      se unan para evitar que estos monstruos científicos locos destrocen su ciudad! ¿Serán suficientes el Caballero Oscuro, 
+      Batwoman, Nightwing, Robin, Spoiler, Orphan y Clayface? ¿Y quién es el cerebro detrás de todo esto?
+    </ion-card-content>
+    <ion-card>
+      <ion-item>
+        <ion-button fill="outline" slot="end" routerLink="/pago-page">Comprar</ion-button>
+        <ion-button fill="outline" slot="end" routerLink="/pago-page">Leer</ion-button>
+      </ion-item>
+
+      
+    </ion-card>
+    
+  </ion-card>
+</ion-col>
+</ion-row>
+</ion-grid>
 
           <!-- //TODO Hacer que funcione el botón de Ver -->
         </ion-card>

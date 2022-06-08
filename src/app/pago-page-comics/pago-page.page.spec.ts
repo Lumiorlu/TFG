@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { UploadFilesPage } from './upload-files.page';
+import { PagoPagePage } from './pago-page.page';
 
-describe('UploadFilesPage', () => {
-  let component: UploadFilesPage;
-  let fixture: ComponentFixture<UploadFilesPage>;
+describe('PagoPagePage', () => {
+  let component: PagoPagePage;
+  let fixture: ComponentFixture<PagoPagePage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ UploadFilesPage ],
+      declarations: [ PagoPagePage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(UploadFilesPage);
+    fixture = TestBed.createComponent(PagoPagePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

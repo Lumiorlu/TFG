@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UploadFilesPageRoutingModule } from './upload-files-routing.module';
+import { PagoPagePageRoutingModule } from './pago-page-routing.module';
 
-import { UploadFilesPage } from './upload-files.page';
+import { PagoPagePage } from './pago-page.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UploadFilesPageRoutingModule
+    PagoPagePageRoutingModule
   ],
-  declarations: [UploadFilesPage]
+  declarations: [PagoPagePage]
 })
-export class UploadFilesPageModule {}
+export class PagoPagePageModule {}

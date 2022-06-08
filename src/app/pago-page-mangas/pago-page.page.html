@@ -1,0 +1,21 @@
+<ion-toolbar>
+  <ion-title class="tituloPago">Realización de pago</ion-title>
+</ion-toolbar>
+
+
+  
+
+<div class="tarjeta-credito">
+  <div>
+    <div #cardInfo></div>
+    <div class="error" *ngIf="mostrarError">
+      {{ mostrarError }}
+    </div>
+  </div>
+  <ion-button [disabled]="!userForm.valid" class="botonPagar" (click)="onClick()" expand="block" fill="solid" shape="round" routerLink="/manga-page">
+    Pagar
+  </ion-button>
+</div>
+
+
+

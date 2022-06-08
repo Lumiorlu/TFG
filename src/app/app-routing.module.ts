@@ -78,9 +78,10 @@ const routes: Routes = [
         (m) => m.LibraryPagePageModule
       ),
   },
+  
   {
-    path: 'upload-files',
-    loadChildren: () => import('./upload-files/upload-files.module').then( m => m.UploadFilesPageModule)
+    path: 'pago-page',
+    loadChildren: () => import('./pago-page-comics/pago-page.module').then( m => m.PagoPagePageModule)
   },
 ];
 
