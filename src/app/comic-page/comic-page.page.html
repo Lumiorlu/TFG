@@ -1,7 +1,7 @@
 <ion-toolbar>
   <ion-buttons slot="start">
-    <ion-menu-button meu="main-content"></ion-menu-button>
-    <!-- <ion-menu-button auto-hide='false' menu="second"></ion-menu-button> -->
+    <!-- <ion-menu-button meu="main-content"></ion-menu-button> -->
+    <ion-menu-button auto-hide='false' menu="second"></ion-menu-button>
   </ion-buttons>
 
   <ion-title>Cómics</ion-title>
@@ -16,39 +16,33 @@
 
 <ion-content class="ion-padding">
   <ion-row>
-    <ion-col
-      size="12"
-      size-lg="3"
-      size-md="4"
-      size-sm="6"
-      size-xs="12"
-    ></ion-col>
+    <ion-col size="12" size-lg="6" size-md="5" size-sm="6" size-xs="12">
+      TODO Terminar el content
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Venom funeral pyre</ion-card-title>
+      <img src="assets/icon/imagenVenomyPunisher.jpg">
+    </ion-card-header>
 
+    <ion-card-content>
+      Punisher y Venom se unen en una aventura, 
+      están en el mismo lado de la pelea contra una pandilla de California que amenaza a la ciudad.
+    </ion-card-content>
     <ion-card>
-      <ion-card-header>
-        <ion-card-title>Venom funeral pyre</ion-card-title>
-        <img src="assets/icon/imagenVenomyPunisher.jpg" />
-      </ion-card-header>
-
-      <ion-card-content>
-        Punisher y Venom se unen en una aventura, están en el mismo lado de la
-        pelea contra una pandilla de California que amenaza a la ciudad.
-      </ion-card-content>
-      <ion-card>
-        <ion-item>
-          <ion-icon slot="start" name="eye"></ion-icon>
-          <ion-button fill="outline" slot="end">Ver</ion-button>
-        </ion-item>
-
-        //TODO Hacer que funcione el botón de Ver
-      </ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="eye"></ion-icon>
+        <ion-button fill="outline" slot="end">Comprar</ion-button>
+      </ion-item>
+      
+//TODO Hacer que funcione el botón de Ver
+      
     </ion-card>
 
     <ion-card>
-      <ion-card-header>
-        <ion-card-title>Batman: Night of the Monster Men</ion-card-title>
-        <img src="assets/icon/batman.jpg" />
-      </ion-card-header>
+      <ion-item>
+        <ion-icon slot="start" name="eye"></ion-icon>
+        <ion-button fill="outline" slot="end">Comprar</ion-button>
+      </ion-item>
 
       <ion-card-content>
         Cuando una gran tormenta se acerca a Gotham City, Batman, Batwoman y
@@ -66,5 +60,11 @@
         </ion-item>
       </ion-card>
     </ion-card>
-  </ion-row>
+    
+  </ion-card>
+</ion-col>
+</ion-row>
+
+
+
 </ion-content>
