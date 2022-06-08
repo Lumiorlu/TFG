@@ -90,6 +90,10 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
+      // name: user.name,
+	    // lastName: user.lastName,
+	    // username: user.username,
+  	  // date: user.date,
       roles: {
         editor: false,
         admin: false,
