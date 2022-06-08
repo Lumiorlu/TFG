@@ -19,15 +19,15 @@ export class MangaPagePage{
     this.getImages();
   }
 
- uploadImage($event:any){
-  const file=$event.target.files[0];
-  console.log(file);
+//  uploadImage($event:any){
+//   const file=$event.target.files[0];
+//   console.log(file);
 
-  const imgRef = ref(this.storage, `Mangas/Berserk/${file.name}`);
+//   const imgRef = ref(this.storage, `Mangas/Berserk/${file.name}`);
 
-  uploadBytes(imgRef, file).then(resp => console.log(resp)).catch(err =>console.log(err))
+//   uploadBytes(imgRef, file).then(resp => console.log(resp)).catch(err =>console.log(err))
 
- }
+//  }
 
  getImages(){
    const imagesRef=ref(this.storage, 'Mangas/Berserk');
