@@ -8,8 +8,12 @@ import { Storage } from '@angular/fire/storage';
   styleUrls: ['./manga-page.page.scss'],
 })
 export class MangaPagePage{
+  constructor() { }
 
-  imagenes: string[];
+  ngOnInit() {
+  }
+
+  /*imagenes: string[];
 
   constructor(private storage: Storage){
     this.imagenes=[];
@@ -40,6 +44,6 @@ export class MangaPagePage{
      }
    }).catch(err=> console.log(err));
    
- }
+ }*/
 
 }

@@ -45,9 +45,9 @@ export class AuthService {
             resolve(res);
           },
           err => reject(err));
-          return this.afAuth.updateProfile({
+          /*return this.afAuth.updateProfile({
             displayName: document.getElementById("displayName").value
-          })
+          })*/
     });
   }
 
