@@ -1,3 +1,6 @@
-<p>
-  upload works!
-</p>
+<input type="file" (change)="uploadImage($event)">
+
+
+  <div class="imagenes">
+    <ion-img [src]="img" *ngFor="let img of imagenes" width="200"></ion-img>
+  </div>
