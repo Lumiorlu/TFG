@@ -39,15 +39,15 @@ export class AuthService {
       this.afAuth.createUserWithEmailAndPassword(value.email, value.password)
         .then(
           res => {
-            console.log(res);
+            console.log(res.user);
             // this.sendVerificationMail();
-            this.setUserData(res.user);
+            this.setUserData(res.user),
+            /*customProperties:{
+              user
+            }*/
             resolve(res);
           },
           err => reject(err));
-          /*return this.afAuth.updateProfile({
-            displayName: document.getElementById("displayName").value
-          })*/
     });
   }
 
@@ -93,14 +93,11 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
-      // name: user.name,
-	    // lastName: user.lastName,
-	    // username: user.username,
-  	  // date: user.date,
+      username:user.username,
       roles: {
         editor: false,
         admin: false,
-        reader: true
+        reader: true,
       }
     };
     return userRef.set(userData, {

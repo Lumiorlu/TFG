@@ -37,13 +37,13 @@
     </ng-container>-->
     
     <ion-item>
-      <ion-input type="text" placeholder="Nombre de Usuario" formControlName="displayName"></ion-input>
+      <ion-input type="text" placeholder="Nombre de Usuario" formControlName="username"></ion-input>
       <ion-icon slot="start" name="person-circle-outline"></ion-icon>
     </ion-item>
 
     <ng-container *ngFor="let error of error_msg.username">
       <div
-        *ngIf="userForm.get('displayName').hasError(error.type) && (userForm.get('displayName').dirty || userForm.get('displayName').touched)"
+        *ngIf="userForm.get('username').hasError(error.type) && (userForm.get('username').dirty || userForm.get('username').touched)"
       >
         {{ error.message }}
       </div>
