@@ -49,7 +49,7 @@ export class RegisterPage implements OnInit {
     username: [
       {
         type: 'required',
-        message: 'DisplayName is required.'
+        message: 'Username is required.'
       },
       {
         type: 'string',

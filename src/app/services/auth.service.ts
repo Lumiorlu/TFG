@@ -91,7 +91,7 @@ export class AuthService {
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
       username:{
-        username: user.username,
+        username: user.username
       },
       roles: {
         editor: false,
