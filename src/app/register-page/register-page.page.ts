@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -13,15 +18,18 @@ export class RegisterPage implements OnInit {
   successMsg = '';
   errorMsg = '';
 
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private fb: FormBuilder
+  ) {}
+
   get email() {
     return this.userForm.get('email');
   }
- 
+
   get password() {
     return this.userForm.get('password');
-  }
-  get username() {
-    return this.userForm.get('username');
   }
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -29,17 +37,17 @@ export class RegisterPage implements OnInit {
     email: [
       {
         type: 'required',
-        message: 'Provide email.'
+        message: 'Provide email.',
       },
       {
         type: 'pattern',
-        message: 'Email is not valid.'
-      }
+        message: 'Email is not valid.',
+      },
     ],
     password: [
       {
         type: 'required',
-        message: 'Password is required.'
+        message: 'Password is required.',
       },
       {
         type: 'minlength',
@@ -51,48 +59,51 @@ export class RegisterPage implements OnInit {
         type: 'required',
         message: 'Username is required.'
       },
-      {
-        type: 'string',
-        message: 'Username is not valid.'
-      }
-    ]
+    ],
   };
-
-  constructor(
-    private router: Router,
-    private authService: AuthService,
-    private fb: FormBuilder
-  ) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({
-      email: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])),
-      password: new FormControl('', Validators.compose([
-        Validators.minLength(8),
-        Validators.required
-      ])),
-      username: new FormControl('', Validators.compose([
-        Validators.required
-      ])),
+      email: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
+        ])
+      ),
+      password: new FormControl(
+        '',
+        Validators.compose([Validators.minLength(8), Validators.required])
+      ),
+      /**
+       * nunca va a funcionar nada si no lo agregas en el formulario, cada campo del form queda
+       * bindeado al html a travez del attr formControlName. Es la unica forma de que lo que hagas
+       * en el input afecte al formulario. Ahora el valor de tu formulario será
+       * {
+       *  email:'', password:'', username:''
+       * }
+       * y se completará con lo que rellenes.
+       */
+      username: ['', Validators.required],
     });
   }
 
   signUp(value) {
-    this.authService.createUser(value)
-      .then((response) => {
+    //aqui si revisas el ngSubmit el valor de 'value' es el formulario como lo mencioné antes
+    // {username, password, email}
+    this.authService.createUser(value).then(
+      (response) => {
         this.errorMsg = '';
         this.successMsg = 'New user created.';
-      }, error => {
+      },
+      (error) => {
         this.errorMsg = error.message;
         this.successMsg = '';
-      });
+      }
+    );
   }
 
   goToLogin() {
     this.router.navigate(['/login-page']);
   }
-
 }
