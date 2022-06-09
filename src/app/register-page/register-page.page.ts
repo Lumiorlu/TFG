@@ -20,8 +20,8 @@ export class RegisterPage implements OnInit {
   get password() {
     return this.userForm.get('password');
   }
-  get displayName() {
-    return this.userForm.get('displayName');
+  get username() {
+    return this.userForm.get('username');
   }
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -46,7 +46,7 @@ export class RegisterPage implements OnInit {
         message: 'Password length should be 8 characters long.'
       }
     ],
-    displayName: [
+    username: [
       {
         type: 'required',
         message: 'DisplayName is required.'
@@ -74,7 +74,7 @@ export class RegisterPage implements OnInit {
         Validators.minLength(8),
         Validators.required
       ])),
-      displayName: new FormControl('', Validators.compose([
+      username: new FormControl('', Validators.compose([
         Validators.required
       ])),
     });

@@ -42,9 +42,6 @@ export class AuthService {
             console.log(res.user);
             // this.sendVerificationMail();
             this.setUserData(res.user),
-            // db.collection('users').doc<User>({
-            //   username: value.username,
-            //  }),
             resolve(res);
           },
           err => reject(err));
@@ -93,7 +90,9 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
-      username:user.username,
+      username:{
+        username: user.username,
+      },
       roles: {
         editor: false,
         admin: false,
