@@ -4,7 +4,7 @@ import { StripeService } from '../services/stripe.service';
 @Component({
   selector: 'app-pago-page-mangas',
   templateUrl: './pago-page-mangas.page.html',
-  styleUrls: ['./pago-page.page-mangas.scss'],
+  styleUrls: ['./pago-page-mangas.page.scss'],
 })
 export class PagoPagePage{
 
