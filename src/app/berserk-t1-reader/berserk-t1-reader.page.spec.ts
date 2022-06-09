@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { BerserkMangaPagePage } from './berserk-manga-page.page';
+import { BerserkT1ReaderPage } from './berserk-t1-reader.page';
 
-describe('BerserkMangaPagePage', () => {
-  let component: BerserkMangaPagePage;
-  let fixture: ComponentFixture<BerserkMangaPagePage>;
+describe('BerserkT1ReaderPage', () => {
+  let component: BerserkT1ReaderPage;
+  let fixture: ComponentFixture<BerserkT1ReaderPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BerserkMangaPagePage ],
+      declarations: [ BerserkT1ReaderPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BerserkMangaPagePage);
+    fixture = TestBed.createComponent(BerserkT1ReaderPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

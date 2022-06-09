@@ -88,18 +88,16 @@ const routes: Routes = [
     path: 'pago-page-mangas',
     loadChildren: () => import('./pago-page-mangas/pago-page-mangas.module').then( m => m.PagoPagePageModule)
   },
-  {
-    path: 'berserk-manga-page',
-    loadChildren: () => import('./berserk-manga-page/berserk-manga-page.module').then( m => m.BerserkMangaPagePageModule)
-  },
+
   {
     path: 'fairytail-manga-page',
     loadChildren: () => import('./fairytail-manga-page/fairytail-manga-page.module').then( m => m.FairytailMangaPagePageModule)
   },
   {
-    path: 'subida-berserk',
-    loadChildren: () => import('./subida-berserk/subida-berserk.module').then( m => m.SubidaBerserkPageModule)
+    path: 'berserk-t1-reader',
+    loadChildren: () => import('./berserk-t1-reader/berserk-t1-reader.module').then( m => m.BerserkT1ReaderPageModule)
   },
+
   
 ];
 

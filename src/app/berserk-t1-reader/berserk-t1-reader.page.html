@@ -1,0 +1,9 @@
+<input type="file" (change)="cargarImagen($event)">
+
+<ion-content>
+
+<div class="images">
+  <img [src]="image" *ngFor="let image of images" width="400">
+</div>
+
+</ion-content>
