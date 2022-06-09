@@ -47,12 +47,8 @@ export class RegisterPage implements OnInit {
     password: [
       {
         type: 'required',
-        message: 'Password is required.',
+        message: 'Password length should be 8 characters long.',
       },
-      {
-        type: 'minlength',
-        message: 'Password length should be 8 characters long.'
-      }
     ],
     username: [
       {
