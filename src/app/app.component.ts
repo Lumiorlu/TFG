@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Storage,  ref, uploadBytes, listAll, getDownloadURL } from '@angular/fire/storage';
-import { ChildActivationStart } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,10 @@ import { ChildActivationStart } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+
+ user = this.authService.user$;
+ constructor(private authService: AuthService) {
+  this.authService.user$.subscribe(res => console.log(res));
+ }
   
 }

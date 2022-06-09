@@ -5,6 +5,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { deleteUser } from 'firebase/auth';
 import { Observable, of } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 
@@ -100,6 +101,11 @@ export class AuthService {
     });
   }
 
+  deleteUser(user) {
+    return this.afs.doc(`bookings/${user.uid}`).delete();
+  }
+      
+
   sendVerificationMail() {
     return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())
@@ -114,7 +120,9 @@ export class AuthService {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
-
+   
+ 
+    
     /**
      * aqui utilizo el tipo de usuario de FIREBASE porque me interesa usar algunas de sus propiedades
      * como displayName, photoURL pero luego puedes añadir tantas propiedades como desees

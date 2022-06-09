@@ -7,11 +7,11 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-         <ion-grid *ngIf="authService.user$ | async as User"> 
+         <ion-grid *ngIf="authService.user$ | async as user"> 
           <ion-list>
-            <ion-menu-toggle auto-hide="false">
+            <ion-menu-toggle>
               <p>
-                Bienvenido <strong>{{ user.username }}</strong>
+                Bienvenido {{ user.username }}
               </p> 
               <ion-item [routerDirection]="'root'" [routerLink]="'/comic-page'">
                 <ion-icon slot="start" [name]="'book'"></ion-icon>
