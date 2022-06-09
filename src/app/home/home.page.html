@@ -1,6 +1,6 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="false">
   <ion-toolbar>
-    <ion-title >
+    <ion-title class="tituloHome" color="primary">
       MANGA&COMICS
     </ion-title>
   </ion-toolbar>
@@ -9,11 +9,12 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-row>
     <ion-col size="12" size-lg="10" size-md="4" size-sm="6" size-xs="12">
-   <ion-button expand="block"  shape="round" routerLink="/register-page" >
+      
+   <ion-button class="registerButton" expand="block"  shape="square" fill="outline" routerLink="/register-page" >
      Registrarme
    </ion-button>
 
-   <ion-button expand="block" fill="clear" shape="round" routerLink="/login-page">
+   <ion-button class="loginButton" expand="block" fill="clear" shape="round" routerLink="/login-page">
      ¿Ya tienes cuenta? ¡Inicia aquí!
    </ion-button>
   </ion-col>

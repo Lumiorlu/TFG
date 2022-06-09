@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PagoPagePage } from './pago-page.page';
+import { PagoPagePage } from './pago-page-comics.page';
 
 const routes: Routes = [
   {

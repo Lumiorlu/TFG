@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PagoPagePageRoutingModule } from './pago-page-routing.module';
+import { BerserkT1ReaderPageRoutingModule } from './berserk-t1-reader-routing.module';
 
-import { PagoPagePage } from './pago-page.page';
+import { BerserkT1ReaderPage } from './berserk-t1-reader.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PagoPagePageRoutingModule
+    BerserkT1ReaderPageRoutingModule
   ],
-  declarations: [PagoPagePage]
+  declarations: [BerserkT1ReaderPage]
 })
-export class PagoPagePageModule {}
+export class BerserkT1ReaderPageModule {}

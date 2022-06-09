@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PagoPagePage } from './pago-page.page';
+import { BerserkT1ReaderPage } from './berserk-t1-reader.page';
 
-describe('PagoPagePage', () => {
-  let component: PagoPagePage;
-  let fixture: ComponentFixture<PagoPagePage>;
+describe('BerserkT1ReaderPage', () => {
+  let component: BerserkT1ReaderPage;
+  let fixture: ComponentFixture<BerserkT1ReaderPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PagoPagePage ],
+      declarations: [ BerserkT1ReaderPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PagoPagePage);
+    fixture = TestBed.createComponent(BerserkT1ReaderPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

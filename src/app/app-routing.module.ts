@@ -80,9 +80,25 @@ const routes: Routes = [
   },
   
   {
-    path: 'pago-page',
-    loadChildren: () => import('./pago-page-comics/pago-page.module').then( m => m.PagoPagePageModule)
+    path: 'pago-page-comics',
+    loadChildren: () => import('./pago-page-comics/pago-page-comics.module').then( m => m.PagoPagePageModule)
   },
+    
+  {
+    path: 'pago-page-mangas',
+    loadChildren: () => import('./pago-page-mangas/pago-page-mangas.module').then( m => m.PagoPagePageModule)
+  },
+
+  {
+    path: 'fairytail-manga-page',
+    loadChildren: () => import('./fairytail-manga-page/fairytail-manga-page.module').then( m => m.FairytailMangaPagePageModule)
+  },
+  {
+    path: 'berserk-t1-reader',
+    loadChildren: () => import('./berserk-t1-reader/berserk-t1-reader.module').then( m => m.BerserkT1ReaderPageModule)
+  },
+
+  
 ];
 
 @NgModule({

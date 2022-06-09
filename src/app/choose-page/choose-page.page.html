@@ -1,15 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Elige</ion-title>
+    <ion-title class="tituloChoose" color="primary">Elige</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button expand= "full" fill="solid" shape="round" routerLink="/manga-page" class="btn_choose" id="btn-manga">
+
+  <ion-button class="mangaButton" (click)="onClick()" expand="full" fill="outline" shape="round" routerLink="/manga-page">
     MANGA
   </ion-button>
 
-  <ion-button  expand= "full" fill="solid" shape="round" routerLink="/comic-page" class="btn_choose" id="btn_comic">
+  <ion-button class="comicButton" (click)="onClick()" expand="full" fill="outline" shape="round" routerLink="/comic-page">
     COMICS
   </ion-button>
 
