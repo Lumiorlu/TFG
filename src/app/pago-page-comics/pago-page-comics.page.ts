@@ -2,9 +2,9 @@ import { AfterViewInit, Component, ElementRef, NgZone, ViewChild } from '@angula
 import { StripeService } from '../services/stripe.service';
 
 @Component({
-  selector: 'app-pago-page',
-  templateUrl: './pago-page.page.html',
-  styleUrls: ['./pago-page.page.scss'],
+  selector: 'app-pago-page-comics',
+  templateUrl: './pago-page-comics.page.html',
+  styleUrls: ['./pago-page-comics.page.scss'],
 })
 export class PagoPagePage{
 

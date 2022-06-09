@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PagoPagePageRoutingModule } from './pago-page-routing.module';
+import { PagoPagePageRoutingModule } from './pago-page-mangas-routing.module';
 
-import { PagoPagePage } from './pago-page.page';
+import { PagoPagePage } from './pago-page-mangas.page';
 
 @NgModule({
   imports: [

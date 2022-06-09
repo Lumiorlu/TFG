@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PagoPagePage } from './pago-page.page';
+import { PagoPagePage } from './pago-page-comics.page';
 
 describe('PagoPagePage', () => {
   let component: PagoPagePage;

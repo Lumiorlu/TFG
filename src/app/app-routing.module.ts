@@ -80,8 +80,8 @@ const routes: Routes = [
   },
   
   {
-    path: 'pago-page',
-    loadChildren: () => import('./pago-page-comics/pago-page.module').then( m => m.PagoPagePageModule)
+    path: 'pago-page-comics',
+    loadChildren: () => import('./pago-page-comics/pago-page-comics.module').then( m => m.PagoPagePageModule)
   },
 ];
 
