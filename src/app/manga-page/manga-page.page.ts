@@ -8,6 +8,7 @@ import { Storage } from '@angular/fire/storage';
   styleUrls: ['./manga-page.page.scss'],
 })
 export class MangaPagePage{
+  constructor() { }
 
 
 }

@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPage } from './login-page.page';
+import { LoginPage } from './login.page';
 
-describe('LoginPagePage', () => {
+describe('LoginPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 

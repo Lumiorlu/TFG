@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RegisterPagePageRoutingModule } from './register-page-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module';
 
-import { RegisterPage } from './register-page.page';
+import { LoginPage } from './login.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { RegisterPage } from './register-page.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    RegisterPagePageRoutingModule
+    LoginPageRoutingModule
   ],
-  declarations: [RegisterPage]
+  declarations: [LoginPage]
 })
-export class RegisterPagePageModule {}
+export class LoginPageModule { }

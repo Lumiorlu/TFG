@@ -1,21 +1,53 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>Iniciar sesión</ion-title>
   </ion-toolbar>
 </ion-header>
- 
+
 <ion-content class="ion-padding">
-  <form (ngSubmit)="login()" [formGroup]="credentials">
+  <form (ngSubmit)="signIn(userForm.value)" [formGroup]="userForm">
     <ion-item fill="solid" class="ion-margin-bottom">
-      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
-      <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email no válido</ion-note>
+      <ion-input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+      ></ion-input>
+      <ion-icon slot="start" name="mail"></ion-icon>
+      <ion-note
+        slot="error"
+        *ngIf="(userForm.get('email').dirty || userForm.get('email').touched) && userForm.get('email').errors"
+        >Email no válido</ion-note
+      >
     </ion-item>
     <ion-item fill="solid" class="ion-margin-bottom">
-      <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
-      <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">La contraseña necesita 6 carateres</ion-note>
+      <ion-input
+        type="password"
+        placeholder="Contraseña"
+        formControlName="password"
+      ></ion-input>
+      <ion-icon slot="start" name="key"></ion-icon>
+      <ion-note
+        slot="error"
+        *ngIf="(userForm.get('password').dirty || userForm.get('password').touched) && userForm.get('password').errors"
+        >La contraseña necesita 6 carateres</ion-note
+      >
     </ion-item>
- 
-    <ion-button onclick="onClick()" type="submit" expand="block" [disabled]="!credentials.valid">Iniciar sesion</ion-button>
-    <ion-button type="button" expand="block" color="secondary" (click)="register()">Crear una cuenta</ion-button>
+
+    <ion-button
+      type="submit"
+      expand="block"
+      [disabled]="!userForm.valid"
+      >Iniciar sesion</ion-button
+    >
+    <ion-button
+      type="button"
+      expand="block"
+      color="secondary"
+      routerLink="/register-page"
+      >Crear una cuenta</ion-button
+    >
   </form>
 </ion-content>

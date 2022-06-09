@@ -1,18 +1,22 @@
-  <ion-toolbar>
-   <ion-buttons slot="start">
-     <ion-menu-button auto-hide='false' menu="first"></ion-menu-button>
-   </ion-buttons>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <!-- <ion-menu-button meu="main-content"></ion-menu-button> -->
+    <ion-menu-button auto-hide="false" menu="first"></ion-menu-button>
+  </ion-buttons>
 
-   
-
-    <ion-title>MANGA</ion-title>
-  </ion-toolbar>
-  <ion-searchbar placeholder="Nombre del Manga" inputmode="decimal" type="decimal" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
-
-
+  <ion-title>Mangas</ion-title>
+</ion-toolbar>
+<ion-searchbar
+  placeholder="Nombre del Manga"
+  inputmode="decimal"
+  type="decimal"
+  (ionChange)="onSearchChange($event)"
+  [debounce]="250"
+></ion-searchbar>
 
 <ion-content>
   <ion-card>
+<<<<<<< HEAD
       <img src="assets/icon/berserk_1_2.jpg">
 
     <ion-card-content>
@@ -21,6 +25,16 @@
       La historia está ambientada en una época con tintes de la Europa medieval y renacentista, 
       en la cual se cuenta la vida de Guts, un mercenario huérfano que acompañado del elfo Puck, 
       caza seres demoníacos llamados apóstoles.
+=======
+    <ion-card-title>Berserk</ion-card-title>
+    <img src="assets/icon/berserk_1_2.jpg" />
+
+    <ion-card-content>
+      La historia está ambientada en una época con tintes de la Europa medieval
+      y renacentista, en la cual se cuenta la vida de Guts, un mercenario
+      huérfano que acompañado del elfo Puck, caza seres demoníacos llamados
+      apóstoles.
+>>>>>>> 69910cb1876e8b05788e639634a1f7578e6d2b6d
     </ion-card-content>
 
     <ion-card>
@@ -29,14 +43,12 @@
         <ion-button fill="outline" slot="end" routerLink="/pago-page-mangas">Comprar</ion-button>
         <ion-button fill="outline" slot="end">Leer</ion-button>
       </ion-item>
-
-      
     </ion-card>
-    
   </ion-card>
 
   <ion-card>
     <ion-card-header>
+<<<<<<< HEAD
       <img src="assets/icon/fairy_tail_1_4.jpg">
     </ion-card-header>
 
@@ -48,6 +60,17 @@
       ragón Igneel, el cual Natsu declara que es su padre adoptivo,
       hasta que un día conocen a una chica llamada Lucy Heartfilia,
       una maga de espíritus celestiales.
+=======
+      <ion-card-title>Fairy Tail</ion-card-title>
+      <img src="assets/icon/fairy_tail_1_4.jpg" />
+    </ion-card-header>
+
+    <ion-card-content>
+      La serie relata las aventuras del joven mago Natsu Dragneel y su gato
+      parlante Happy que viajan juntos en busca del d ragón Igneel, el cual
+      Natsu declara que es su padre adoptivo, hasta que un día conocen a una
+      chica llamada Lucy Heartfilia, una maga de espíritus celestiales.
+>>>>>>> 69910cb1876e8b05788e639634a1f7578e6d2b6d
     </ion-card-content>
     <ion-card>
       <ion-item>
@@ -55,13 +78,6 @@
         <ion-button fill="outline" slot="end" routerLink="/pago-page-mangas">Comprar</ion-button>
         <ion-button fill="outline" slot="end">Leer</ion-button>
       </ion-item>
-
-      
     </ion-card>
-    
   </ion-card>
-
-
 </ion-content>
-
-

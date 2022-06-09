@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login-page.page.html',
-  styleUrls: ['./login-page.page.scss'],
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
 
@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
       },
       {
         type: 'minlength',
-        message: 'Password length should be 8 characters long.'
+        message: 'Password length should be 6 characters long.'
       }
     ]
   };
@@ -62,7 +62,7 @@ export class LoginPage implements OnInit {
       .then((response) => {
         console.log(response);
         this.errorMsg = '';
-        this.router.navigate(['/choose-page']);
+        this.router.navigate(['/demo']);
       }, error => {
         this.errorMsg = error.message;
         this.successMsg = '';
@@ -70,7 +70,7 @@ export class LoginPage implements OnInit {
   }
 
   goToSignup() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/demo/register']);
   }
 
 }

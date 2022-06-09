@@ -2,20 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 import { IonicModule } from '@ionic/angular';
 
-import { RegisterPagePageRoutingModule } from './register-page-routing.module';
+import { MakeAppointmentPageRoutingModule } from './make-appointment-routing.module';
 
-import { RegisterPage } from './register-page.page';
+import { MakeAppointmentPage } from './make-appointment.page';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     ReactiveFormsModule,
+    FormsModule,
     IonicModule,
-    RegisterPagePageRoutingModule
+    MakeAppointmentPageRoutingModule
   ],
-  declarations: [RegisterPage]
+  declarations: [MakeAppointmentPage]
 })
-export class RegisterPagePageModule {}
+export class MakeAppointmentPageModule { }
