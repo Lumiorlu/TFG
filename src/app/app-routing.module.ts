@@ -96,6 +96,10 @@ const routes: Routes = [
     path: 'fairytail-manga-page',
     loadChildren: () => import('./fairytail-manga-page/fairytail-manga-page.module').then( m => m.FairytailMangaPagePageModule)
   },
+  {
+    path: 'subida-berserk',
+    loadChildren: () => import('./subida-berserk/subida-berserk.module').then( m => m.SubidaBerserkPageModule)
+  },
   
 ];
 
