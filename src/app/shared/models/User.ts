@@ -3,9 +3,6 @@ export interface Roles {
 	editor?: boolean;
 	admin?: boolean;
 }
-export interface Username {
-	username: string;
-}
 
 export interface User {
 	uid: string;
@@ -13,6 +10,7 @@ export interface User {
 	photoURL: string;
 	emailVerified: boolean;
 	email: string;
-	username:Username;
+	// declararo como string no es necesario que declares una interfaz
+	username: string;
 	roles: Roles;
 }
