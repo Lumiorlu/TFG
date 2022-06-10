@@ -1,7 +1,8 @@
 {
   "name": "TFG",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
