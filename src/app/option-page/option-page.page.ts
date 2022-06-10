@@ -33,11 +33,11 @@ export class OptionPagePage implements OnInit {
       });
   }
 
-  delete(user) {
-    console.log(user);
+  delete(uid) {
+    console.log(uid);
     if (window.confirm('Do you really want to delete?')) {
       this.authService.
-      deleteUser( user.uid )
+      deleteUser( uid )
       .then((res) => {
         //this.router.navigateByUrl('/home');
       });

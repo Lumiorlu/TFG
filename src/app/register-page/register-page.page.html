@@ -9,33 +9,6 @@
 
 <ion-content class="ion-padding">
   <form class="form" [formGroup]="userForm" (ngSubmit)="signUp(userForm.value)">
-
-    <!-- <ion-item>
-      <ion-input type="text" placeholder="Nombre" formControlName="name"></ion-input>
-      <ion-icon slot="start" name="person"></ion-icon>
-    </ion-item>
-
-    <ng-container *ngFor="let error of error_msg.name">
-      <div
-        *ngIf="userForm.get('name').hasError(error.type) && (userForm.get('name').dirty || userForm.get('name').touched)"
-      >
-        {{ error.message }}
-      </div>
-    </ng-container>
-
-    <ion-item>
-      <ion-input type="text" placeholder="Apellidos" formControlName="lastname"></ion-input>
-      <ion-icon slot="start" name="person"></ion-icon>
-    </ion-item>
-
-    <ng-container *ngFor="let error of error_msg.lastname">
-      <div
-        *ngIf="userForm.get('lastname').hasError(error.type) && (userForm.get('lastname').dirty || userForm.get('lastname').touched)"
-      >
-        {{ error.message }}
-      </div>
-    </ng-container>-->
-    
     <ion-item>
       <ion-input type="text" placeholder="Nombre de Usuario" formControlName="username"></ion-input>
       <ion-icon slot="start" name="person-circle-outline"></ion-icon>
@@ -74,18 +47,6 @@
         {{ error.message }}
       </div>
     </ng-container>
-
-    <!-- <ion-text color="grey">
-      <h6>Año y día de nacimiento</h6>
-    </ion-text>
-
-    <ion-item>
-      <ion-item>
-        <ion-item>
-          <ion-datetime display-format="YYYY-MM-DD" formControlName="date"></ion-datetime>
-        </ion-item>
-      </ion-item>
-    </ion-item> -->
 
     <ion-button shape="round" type="submit" expand="block" [disabled]="!userForm.valid" routerLink="/login-page">
       Continuar

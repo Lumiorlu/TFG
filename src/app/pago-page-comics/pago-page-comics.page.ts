@@ -34,6 +34,7 @@ export class PagoPagePage{
    const {token, error} = await stripe.createToken(this.card);
    if(token){
      this.stripeService.charge(100, token.id);
+     if (window.confirm('Muchas gracias por tu compra')) 
     console.log(token);
    }else{
 

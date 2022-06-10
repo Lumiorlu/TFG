@@ -102,7 +102,9 @@ export class AuthService {
   }
 
   deleteUser(user: User) {
+    console.log(user.uid);
     return this.afs.doc(`users/${user.uid}`).delete();
+    
   }
       
 
