@@ -101,9 +101,9 @@ export class AuthService {
     });
   }
 
-  deleteUser(user: User) {
-    console.log(user.uid);
-    return this.afs.doc(`users/${user.uid}`).delete();
+  deleteUser(user: string) {
+    console.log(user);
+    return this.afs.doc(`users/${user}`).delete();
   }
 
   sendVerificationMail() {
