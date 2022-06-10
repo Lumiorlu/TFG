@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User, user } from '@angular/fire/auth';
 import {
   FormGroup,
   FormBuilder,
@@ -32,11 +33,11 @@ export class OptionPagePage implements OnInit {
       });
   }
 
-  delete(id) {
-    console.log(id);
+  delete(user) {
+    console.log(user);
     if (window.confirm('Do you really want to delete?')) {
       this.authService.
-      deleteUser(id)
+      deleteUser( user.uid )
       .then((res) => {
         //this.router.navigateByUrl('/home');
       });

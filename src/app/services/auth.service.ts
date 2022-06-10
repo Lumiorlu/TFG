@@ -101,8 +101,8 @@ export class AuthService {
     });
   }
 
-  deleteUser(user) {
-    return this.afs.doc(`bookings/${user.uid}`).delete();
+  deleteUser(user: User) {
+    return this.afs.doc(`users/${user.uid}`).delete();
   }
       
 
