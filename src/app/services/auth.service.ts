@@ -26,13 +26,13 @@ export class AuthService {
       switchMap((user) => {
         /********
          * ESTO LEELO A LO ULTIMO
-         * 
+         *
          * si ya leiste todo ahora vas a entender mejor este Observable...
          * me devuelve el usuario authenticado de FIREBASE
          * peroooo lo intercambio por el de la base de datos ya que tiene las propiedades que me interesan
-         * es facil identificarlo porque el usuario de FIREBASE tiene el UID con el cual lo guarde en la BD 
-         * y ahi esta toda la magia de administracion del usuario ya luego lo puede utilizar en todos 
-         * lo componentes que quieras porque lo obtienes del local storage o para mi gusto es mejor 
+         * es facil identificarlo porque el usuario de FIREBASE tiene el UID con el cual lo guarde en la BD
+         * y ahi esta toda la magia de administracion del usuario ya luego lo puede utilizar en todos
+         * lo componentes que quieras porque lo obtienes del local storage o para mi gusto es mejor
          * injectar el servicio en el compoenente que desees y subscribirte a la property $user
          */
         if (user) {
@@ -104,9 +104,7 @@ export class AuthService {
   deleteUser(user: User) {
     console.log(user.uid);
     return this.afs.doc(`users/${user.uid}`).delete();
-    
   }
-      
 
   sendVerificationMail() {
     return this.afAuth.currentUser
@@ -117,14 +115,11 @@ export class AuthService {
   }
 
   setUserData(user: any, username: string) {
-
     // fijate que el documento se va a guardar con el UID del usuario de FIREBASE para luego identificarlo
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
-   
- 
-    
+
     /**
      * aqui utilizo el tipo de usuario de FIREBASE porque me interesa usar algunas de sus propiedades
      * como displayName, photoURL pero luego puedes añadir tantas propiedades como desees
@@ -133,7 +128,7 @@ export class AuthService {
      * que vas a añadir podes usar un objeto. En plan setUserData(user:any, properties:any)
      * y luego puedes llamarla asi this.setUserData(res.user, {username:value.username, photo: value.photo, etc})
      * y ese value es el form no te olvides sino cambiale el nombre
-     * 
+     *
      * tambien puedes ver que creo una propiedad uid con el uid del USER DE FIREBASE ese 'id' me va a servir
      * luego para crear relaciones como en una tabla SQL similar a lo que hice en easy-bank con los movements
      */
