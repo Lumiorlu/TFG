@@ -1,23 +1,29 @@
-<ion-header [translucent]="false">
+<ion-app class="pantalla">
+
   <ion-toolbar>
     <ion-title class="tituloHome" color="primary">
-      MANGA&COMICS
+      ¡Bienvenido Geek!
     </ion-title>
   </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-row>
-    <ion-col size="12" size-lg="10" size-md="4" size-sm="6" size-xs="12">
-      
-   <ion-button class="registerButton" expand="block"  shape="square" fill="outline" routerLink="/register-page" >
-     Registrarme
-   </ion-button>
 
-   <ion-button class="loginButton" expand="block" fill="clear" shape="round" routerLink="/login-page">
-     ¿Ya tienes cuenta? ¡Inicia aquí!
-   </ion-button>
-  </ion-col>
-  </ion-row>
+<ion-content class="ion-padding">
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-lg="6" size-md="8" size-sm="10" size-xs="13">
+        
+        <ion-button class="registerButton" size="large"  shape="square" color="secondary" routerLink="/register-page" >
+          Registrarme
+        </ion-button>
+
+        <ion-button class="loginButton" expand="block" shape="outline" routerLink="/login-page">
+          ¿Ya tienes cuenta? ¡Inicia aquí!
+        </ion-button>
+
+      </ion-col>
+      </ion-row>
+  </ion-grid>
    
 </ion-content>
+</ion-app>

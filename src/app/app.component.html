@@ -9,7 +9,7 @@
       <ion-content>
         <ion-grid *ngIf="authService.user$ | async as user">
           <ion-list>
-            <ion-menu-toggle>
+            <ion-menu-toggle auto-hide="false">
               <p>Bienvenido {{ user.username }}</p>
               <ion-item [routerDirection]="'root'" [routerLink]="'/comic-page'">
                 <ion-icon slot="start" [name]="'book'"></ion-icon>

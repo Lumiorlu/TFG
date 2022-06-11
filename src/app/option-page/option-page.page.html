@@ -9,9 +9,37 @@
 </ion-header>
 
 <ion-content>
-    <ion-button shape="round" type="submit" expand="block" (click)="logOut()"> Cerrar sesión </ion-button>
-    <ion-button color="danger" shape="round" type="submit" expand="block" (click)="delete(user.uid)"> Borrar cuenta </ion-button>
-  
-  
+  <ion-button shape="round" type="submit" expand="block" (click)="logOut()">
+    Cerrar sesión
+  </ion-button>
+  <!-- aqui antes pusiste user.uid pero donde mierda esta user de donde lo lee??? si ni siquiera esta como variable de tu componente se entiend??? esto arreglado seria llamando a userTest.uid
+    
+    hacerlo con async se puede tambien pero como explico mas abajo tienes que declarar un ngIf o en el boton o en el ion-content como para poder usar el alias que le declares al async-->
+  <ion-button
+    color="danger"
+    shape="round"
+    type="submit"
+    expand="block"
+    (click)="delete(userTest.uid)"
+  >
+    Borrar cuenta
+  </ion-button>
 
+  <!-- Como utilice el metodo de subscribirme y asignar el resultado a una variable del componente pues ya lo puede ver 
+    si te preguntas porque mierda pongo el "?" es porque al principio userTest no esta definido hasta que hago las subscripcion. Entonces el signo lo que hace es NO ACCEDER a la propiedad en este caso "email" HASTA que userTest este DEFINIDO
+  -->
+
+  <p>{{userTest?.email}}</p>
+
+  <!-- aca un ejemplo para que veas todo lo que trae userTest usando el pipe JSON -->
+
+  <div>{{userTest | json}}</div>
+
+  <!-- este metodo es el mas complejo pero practico si tu sabes usar esto no necesitas subscribirte ni nada solo usar el observable directamente lo que hago es asignar todo a una variable user que SOLO esta disponible aqui en el html del tag ng-container tambien lo puedes hacer en un div pero recuerda que solo dentro de ese tag podras usarlo.
+  
+  Un truco puede ser englobar todo en un div o ng-container y ahi hacer esto del async pero corres el riesgo que si no carga el usuario o falla no vez nada asique no lo recomiendo para los que recien empiezan osea ustedes xd-->
+
+  <ng-container *ngIf="(authService.user$ | async) as user">
+    <p>{{user.username}}</p>
+  </ng-container>
 </ion-content>
