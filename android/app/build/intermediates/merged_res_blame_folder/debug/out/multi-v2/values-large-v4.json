@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/adrian/Escritorio/Proyecto/TFG/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
+            "outputFile": "C:\\Users\\Gaming\\Desktop\\Proyecto\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
-                    "source": "/home/adrian/.gradle/caches/transforms-3/5fd9b8ce334cc84f53b482b50693cf45/transformed/jetified-android-crop-1.0.0/res/values-large/values-large.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "4",
-                        "startOffsets": "172",
-                        "endColumns": "47",
-                        "endOffsets": "215"
-                    },
-                    "to": {
-                        "startLines": "9",
-                        "startColumns": "4",
-                        "startOffsets": "532",
-                        "endColumns": "47",
-                        "endOffsets": "575"
-                    }
-                },
-                {
-                    "source": "/home/adrian/.gradle/caches/transforms-3/ce3f79a523d89320dd464c2b2de6183e/transformed/appcompat-1.2.0/res/values-large-v4/values-large-v4.xml",
+                    "source": "C:\\Users\\Gaming\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -35,6 +18,23 @@
                         "startOffsets": "55,114,185,256,326,396,464,580,684",
                         "endColumns": "58,70,70,69,69,67,67,103,115",
                         "endOffsets": "109,180,251,321,391,459,527,679,795"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Gaming\\.gradle\\caches\\transforms-3\\db20d8b2dffd94f8c8859ab5124ec512\\transformed\\jetified-android-crop-1.0.0\\res\\values-large\\values-large.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "172",
+                        "endColumns": "47",
+                        "endOffsets": "215"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "532",
+                        "endColumns": "47",
+                        "endOffsets": "575"
                     }
                 }
             ]

@@ -2,11 +2,6 @@
 <resources>
     <string name="app_name">TFG</string>
     <string name="title_activity_main">TFG</string>
-<<<<<<< HEAD
     <string name="package_name">com.example.app</string>
     <string name="custom_url_scheme">com.example.app</string>
-=======
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
->>>>>>> ecfbf824c1854d7d9b3316dc8a20d75d33d0930a
 </resources>

@@ -1,37 +1,37 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:2:1-9:12
-INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:2:1-9:12
-INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:2:1-9:12
+ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-9:12
 	xmlns:amazon
-		ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:4:1-57
+		ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:4:1-57
 	package
-		ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:2:11-46
-		INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
-		INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:11-46
+		INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:3:1-59
+		ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:3:1-59
 application
-ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:5:1-7:15
+ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-7:15
 activity#com.soundcloud.android.crop.CropImageActivity
-ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:6:1-73
+ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-73
 	android:name
-		ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:6:11-71
+		ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-71
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:8:1-76
+ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:1-76
 	android:name
-		ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml:8:18-74
+		ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:18-74
 uses-sdk
-INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
-INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
-INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
-INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
+INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
-		ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
-		INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
-		ADDED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
-		INJECTED from /home/adrian/Escritorio/Proyecto/TFG/android/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Gaming\Desktop\Proyecto\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml

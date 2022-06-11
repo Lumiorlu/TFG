@@ -3,11 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-<<<<<<< HEAD
         applicationId "com.example.app"
-=======
-        applicationId "io.ionic.starter"
->>>>>>> ecfbf824c1854d7d9b3316dc8a20d75d33d0930a
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

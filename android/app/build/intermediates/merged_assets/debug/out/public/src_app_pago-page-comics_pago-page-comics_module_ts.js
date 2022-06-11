@@ -123,7 +123,8 @@ let PagoPagePage = class PagoPagePage {
             const { token, error } = yield stripe.createToken(this.card);
             if (token) {
                 this.stripeService.charge(100, token.id);
-                console.log(token);
+                if (window.confirm('Muchas gracias por tu compra'))
+                    console.log(token);
             }
             else {
                 this.ngZone.run(() => this.mostrarError = error.message);
@@ -156,7 +157,7 @@ PagoPagePage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
   \************************************************************************/
 /***/ ((module) => {
 
-module.exports = ".tarjeta-credito {\n  width: 300px;\n  height: 150px;\n  border: 4px solid #5597e8;\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n  margin-bottom: 500px;\n  margin-left: 45px;\n}\n\n.botonPagar {\n  margin-top: 30px;\n}\n\n.tituloPago {\n  font-family: \"Franklin Gothic Medium\";\n  margin-left: 90px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ28tcGFnZS1jb21pY3MucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtFQUNBLGFBQUE7RUFDQSx5QkFBQTtFQUNBLGFBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSw2QkFBQTtFQUNBLG9CQUFBO0VBQ0EsaUJBQUE7QUFDSjs7QUFHQTtFQUNJLGdCQUFBO0FBQUo7O0FBR0E7RUFDSSxxQ0FBQTtFQUNBLGlCQUFBO0FBQUoiLCJmaWxlIjoicGFnby1wYWdlLWNvbWljcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGFyamV0YS1jcmVkaXRve1xuICAgIHdpZHRoOiAzMDBweDtcbiAgICBoZWlnaHQ6IDE1MHB4O1xuICAgIGJvcmRlcjo0cHggc29saWQgcmdiKDg1LCAxNTEsIDIzMik7XG4gICAgcGFkZGluZzogMjBweDtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHkgO1xuICAgIG1hcmdpbi1ib3R0b206IDUwMHB4O1xuICAgIG1hcmdpbi1sZWZ0OiA0NXB4O1xuXG59XG5cbi5ib3RvblBhZ2Fye1xuICAgIG1hcmdpbi10b3A6IDMwcHg7XG59XG5cbi50aXR1bG9QYWdve1xuICAgIGZvbnQtZmFtaWx5OiAnRnJhbmtsaW4gR290aGljIE1lZGl1bSc7XG4gICAgbWFyZ2luLWxlZnQ6IDkwcHg7XG59XG5cblxuICBcbiAiXX0= */";
+module.exports = ".tarjeta-credito {\n  width: 300px;\n  height: 150px;\n  border: 4px solid #5597e8;\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n  margin-bottom: 500px;\n  margin-left: 45px;\n}\n\n.botonPagar {\n  margin-top: 30px;\n}\n\n.tituloPago {\n  font-family: \"Franklin Gothic Medium\";\n  margin-left: 90px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ28tcGFnZS1jb21pY3MucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtFQUNBLGFBQUE7RUFDQSx5QkFBQTtFQUNBLGFBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSw2QkFBQTtFQUNBLG9CQUFBO0VBQ0EsaUJBQUE7QUFDSjs7QUFHQTtFQUNJLGdCQUFBO0FBQUo7O0FBR0E7RUFDSSxxQ0FBQTtFQUNBLGlCQUFBO0FBQUoiLCJmaWxlIjoicGFnby1wYWdlLWNvbWljcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGFyamV0YS1jcmVkaXRve1xyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gICAgaGVpZ2h0OiAxNTBweDtcclxuICAgIGJvcmRlcjo0cHggc29saWQgcmdiKDg1LCAxNTEsIDIzMik7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seSA7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA1MDBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiA0NXB4O1xyXG5cclxufVxyXG5cclxuLmJvdG9uUGFnYXJ7XHJcbiAgICBtYXJnaW4tdG9wOiAzMHB4O1xyXG59XHJcblxyXG4udGl0dWxvUGFnb3tcclxuICAgIGZvbnQtZmFtaWx5OiAnRnJhbmtsaW4gR290aGljIE1lZGl1bSc7XHJcbiAgICBtYXJnaW4tbGVmdDogOTBweDtcclxufVxyXG5cclxuXHJcbiAgXHJcbiAiXX0= */";
 
 /***/ }),
 
@@ -166,7 +167,7 @@ module.exports = ".tarjeta-credito {\n  width: 300px;\n  height: 150px;\n  borde
   \************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-toolbar>\n  <ion-title class=\"tituloPago\">Realización de pago</ion-title>\n</ion-toolbar>\n\n\n  \n\n<div class=\"tarjeta-credito\">\n  <div>\n    <div #cardInfo></div>\n    <div class=\"error\" *ngIf=\"mostrarError\">\n      {{ mostrarError }}\n    </div>\n  </div>\n  <ion-button class=\"botonPagar\" (click)=\"onClick()\" expand=\"block\" fill=\"solid\" shape=\"round\" routerLink=\"/comic-page\">\n    Pagar\n  </ion-button>\n</div>\n\n\n\n";
+module.exports = "<ion-toolbar>\r\n  <ion-title class=\"tituloPago\">Realización de pago</ion-title>\r\n</ion-toolbar>\r\n\r\n\r\n  \r\n\r\n<div class=\"tarjeta-credito\">\r\n  <div>\r\n    <div #cardInfo></div>\r\n    <div class=\"error\" *ngIf=\"mostrarError\">\r\n      {{ mostrarError }}\r\n    </div>\r\n  </div>\r\n  <ion-button class=\"botonPagar\" (click)=\"onClick()\" expand=\"block\" fill=\"solid\" shape=\"round\" routerLink=\"/comic-page\">\r\n    Pagar\r\n  </ion-button>\r\n</div>\r\n\r\n\r\n\r\n";
 
 /***/ })
 

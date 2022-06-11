@@ -1,24 +1,6 @@
 {
-<<<<<<< HEAD
 	"appId": "com.example.app",
 	"appName": "TFG",
 	"webDir": "www",
 	"bundledWebRuntime": false
-=======
-	"appId": "io.ionic.starter",
-	"appName": "TFG",
-	"webDir": "www",
-	"bundledWebRuntime": false,
-	"cordova": {
-		"preferences": {
-			"ScrollEnabled": "false",
-			"BackupWebStorage": "none",
-			"SplashMaintainAspectRatio": "true",
-			"FadeSplashScreenDuration": "300",
-			"SplashShowOnlyFirstTime": "false",
-			"SplashScreen": "screen",
-			"SplashScreenDelay": "3000"
-		}
-	}
->>>>>>> ecfbf824c1854d7d9b3316dc8a20d75d33d0930a
 }

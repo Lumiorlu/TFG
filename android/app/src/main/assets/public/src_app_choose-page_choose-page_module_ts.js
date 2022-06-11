@@ -122,7 +122,7 @@ ChoosePagePage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
   \**************************************************************/
 /***/ ((module) => {
 
-module.exports = ".mangaButton {\n  margin-top: 80px;\n  height: 200px;\n}\n\n.comicButton {\n  margin-top: 40px;\n  height: 200px;\n}\n\n.tituloChoose {\n  margin-left: 140px;\n  font-size: 30px;\n  font-family: \"Trebuchet MS\";\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNob29zZS1wYWdlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdCQUFBO0VBQ0EsYUFBQTtBQUNKOztBQUVBO0VBQ0ksZ0JBQUE7RUFDQSxhQUFBO0FBQ0o7O0FBRUE7RUFDSSxrQkFBQTtFQUNBLGVBQUE7RUFDQSwyQkFBQTtBQUNKIiwiZmlsZSI6ImNob29zZS1wYWdlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYW5nYUJ1dHRvbntcbiAgICBtYXJnaW4tdG9wOiA4MHB4O1xuICAgIGhlaWdodDogMjAwcHg7XG59XG5cbi5jb21pY0J1dHRvbntcbiAgICBtYXJnaW4tdG9wOiA0MHB4O1xuICAgIGhlaWdodDogMjAwcHg7XG59XG5cbi50aXR1bG9DaG9vc2V7XG4gICAgbWFyZ2luLWxlZnQ6IDE0MHB4O1xuICAgIGZvbnQtc2l6ZTogMzBweDtcbiAgICBmb250LWZhbWlseTonVHJlYnVjaGV0IE1TJztcbn0iXX0= */";
+module.exports = ".mangaButton {\n  margin-top: 80px;\n  height: 200px;\n}\n\n.comicButton {\n  margin-top: 40px;\n  height: 200px;\n}\n\n.tituloChoose {\n  margin-left: 140px;\n  font-size: 30px;\n  font-family: \"Trebuchet MS\";\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNob29zZS1wYWdlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdCQUFBO0VBQ0EsYUFBQTtBQUNKOztBQUVBO0VBQ0ksZ0JBQUE7RUFDQSxhQUFBO0FBQ0o7O0FBRUE7RUFDSSxrQkFBQTtFQUNBLGVBQUE7RUFDQSwyQkFBQTtBQUNKIiwiZmlsZSI6ImNob29zZS1wYWdlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYW5nYUJ1dHRvbntcclxuICAgIG1hcmdpbi10b3A6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDIwMHB4O1xyXG59XHJcblxyXG4uY29taWNCdXR0b257XHJcbiAgICBtYXJnaW4tdG9wOiA0MHB4O1xyXG4gICAgaGVpZ2h0OiAyMDBweDtcclxufVxyXG5cclxuLnRpdHVsb0Nob29zZXtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNDBweDtcclxuICAgIGZvbnQtc2l6ZTogMzBweDtcclxuICAgIGZvbnQtZmFtaWx5OidUcmVidWNoZXQgTVMnO1xyXG59Il19 */";
 
 /***/ }),
 
@@ -132,7 +132,7 @@ module.exports = ".mangaButton {\n  margin-top: 80px;\n  height: 200px;\n}\n\n.c
   \**************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title class=\"tituloChoose\" color=\"primary\">Elige</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"ion-padding\">\n\n  <ion-button class=\"mangaButton\"  expand=\"full\" fill=\"outline\" shape=\"round\" routerLink=\"/manga-page\">\n    MANGA\n  </ion-button>\n\n  <ion-button class=\"comicButton\"  expand=\"full\" fill=\"outline\" shape=\"round\" routerLink=\"/comic-page\">\n    COMICS\n  </ion-button>\n\n\n</ion-content>\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title class=\"tituloChoose\" color=\"primary\">Elige</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n\r\n  <ion-button class=\"mangaButton\"  expand=\"full\" fill=\"outline\" shape=\"round\" routerLink=\"/manga-page\">\r\n    MANGA\r\n  </ion-button>\r\n\r\n  <ion-button class=\"comicButton\"  expand=\"full\" fill=\"outline\" shape=\"round\" routerLink=\"/comic-page\">\r\n    COMICS\r\n  </ion-button>\r\n\r\n\r\n</ion-content>\r\n";
 
 /***/ })
 

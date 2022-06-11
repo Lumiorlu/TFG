@@ -1,158 +1,6 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["common"],{
 
-/***/ 7556:
-/*!******************************************!*\
-  !*** ./src/app/services/auth.service.ts ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AuthService": () => (/* binding */ AuthService)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_fire_compat_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/compat/auth */ 5873);
-/* harmony import */ var _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/compat/firestore */ 2393);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 4139);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ 9095);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 8759);
-
-
-
-
-
-
-
-let AuthService = class AuthService {
-    constructor(afAuth, afs, router) {
-        this.afAuth = afAuth;
-        this.afs = afs;
-        this.router = router;
-        this.user$ = this.afAuth.authState.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.switchMap)((user) => {
-            /********
-             * ESTO LEELO A LO ULTIMO
-             *
-             * si ya leiste todo ahora vas a entender mejor este Observable...
-             * me devuelve el usuario authenticado de FIREBASE
-             * peroooo lo intercambio por el de la base de datos ya que tiene las propiedades que me interesan
-             * es facil identificarlo porque el usuario de FIREBASE tiene el UID con el cual lo guarde en la BD
-             * y ahi esta toda la magia de administracion del usuario ya luego lo puede utilizar en todos
-             * lo componentes que quieras porque lo obtienes del local storage o para mi gusto es mejor
-             * injectar el servicio en el compoenente que desees y subscribirte a la property $user
-             */
-            if (user) {
-                console.log('User from firebase: ', user);
-                return this.afs.doc(`users/${user.uid}`).valueChanges();
-            }
-            else {
-                return (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.of)(null);
-            }
-        }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.tap)((user) => {
-            localStorage.setItem('user', JSON.stringify(user));
-        }));
-    }
-    createUser(value) {
-        /*******************************
-         * value aquí sigue siendo
-         * {username, email, password}
-         */
-        return new Promise((resolve, reject) => {
-            this.afAuth
-                .createUserWithEmailAndPassword(value.email, value.password) // ahora esto cobra sentido
-                .then((res) => {
-                console.log(res.user);
-                // this.sendVerificationMail();
-                /**
-                 * res.user es un USUARIO DE FIREBASE tiene su propia estructura
-                 * lo puedes ver aqui: https://firebase.google.com/docs/reference/js/v8/firebase.User
-                 * luego puedes ver que se lo paso a setUserData pero ahi dentro solo utilizo algunas
-                 * propiedades. Si tu quieres que a ese metodo llegue tu username SE LO TIENES QUE ENVIAR
-                 * y ya sabes donde estas en VALUE
-                 */
-                this.setUserData(res.user, value.username);
-                resolve(res);
-            }, (err) => reject(err));
-        });
-    }
-    signinUser(value) {
-        return new Promise((resolve, reject) => {
-            this.afAuth.signInWithEmailAndPassword(value.email, value.password).then((res) => resolve(res), (err) => reject(err));
-        });
-    }
-    signoutUser() {
-        return new Promise((resolve, reject) => {
-            if (this.afAuth.currentUser) {
-                this.afAuth
-                    .signOut()
-                    .then(() => {
-                    localStorage.removeItem('user');
-                    console.log('Sign out');
-                    resolve();
-                })
-                    .catch(() => {
-                    reject();
-                });
-            }
-        });
-    }
-    sendVerificationMail() {
-        return this.afAuth.currentUser
-            .then((u) => u.sendEmailVerification())
-            .then(() => {
-            this.router.navigate(['verify-email-address']);
-        });
-    }
-    setUserData(user, username) {
-        // fijate que el documento se va a guardar con el UID del usuario de FIREBASE para luego identificarlo
-        const userRef = this.afs.doc(`users/${user.uid}`);
-        /**
-         * aqui utilizo el tipo de usuario de FIREBASE porque me interesa usar algunas de sus propiedades
-         * como displayName, photoURL pero luego puedes añadir tantas propiedades como desees
-         * eso si recuerda añadirlas en la interfaz "User" como hice con username y tambien que las propiedades
-         * lleguen a travez de los argumentos de la funcion como hice con username. Si vez que son muchas propiedes
-         * que vas a añadir podes usar un objeto. En plan setUserData(user:any, properties:any)
-         * y luego puedes llamarla asi this.setUserData(res.user, {username:value.username, photo: value.photo, etc})
-         * y ese value es el form no te olvides sino cambiale el nombre
-         *
-         * tambien puedes ver que creo una propiedad uid con el uid del USER DE FIREBASE ese 'id' me va a servir
-         * luego para crear relaciones como en una tabla SQL similar a lo que hice en easy-bank con los movements
-         */
-        const userData = {
-            uid: user.uid,
-            email: user.email,
-            displayName: user.displayName,
-            photoURL: user.photoURL,
-            emailVerified: user.emailVerified,
-            username,
-            roles: {
-                editor: false,
-                admin: false,
-                reader: true,
-            },
-        };
-        return userRef.set(userData, {
-            merge: true,
-        });
-    }
-};
-AuthService.ctorParameters = () => [
-    { type: _angular_fire_compat_auth__WEBPACK_IMPORTED_MODULE_3__.AngularFireAuth },
-    { type: _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_4__.AngularFirestore },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router }
-];
-AuthService = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Injectable)({
-        providedIn: 'root',
-    })
-], AuthService);
-
-
-
-/***/ }),
-
 /***/ 2865:
 /*!********************************************!*\
   !*** ./src/app/services/stripe.service.ts ***!
@@ -399,7 +247,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var _home_adrian_Escritorio_Proyecto_TFG_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_Gaming_Desktop_Proyecto_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 9158);
 
 
@@ -409,7 +257,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const attachComponent = /*#__PURE__*/function () {
-  var _ref = (0,_home_adrian_Escritorio_Proyecto_TFG_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
+  var _ref = (0,C_Users_Gaming_Desktop_Proyecto_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
     var _a;
 
     if (delegate) {
@@ -458,7 +306,7 @@ const CoreDelegate = () => {
   let Reference;
 
   const attachViewToDom = /*#__PURE__*/function () {
-    var _ref2 = (0,_home_adrian_Escritorio_Proyecto_TFG_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
+    var _ref2 = (0,C_Users_Gaming_Desktop_Proyecto_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
       var _a, _b;
 
       BaseComponent = parentElement;
@@ -693,7 +541,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "p": () => (/* binding */ printIonContentErrorMsg),
 /* harmony export */   "s": () => (/* binding */ scrollToTop)
 /* harmony export */ });
-/* harmony import */ var _home_adrian_Escritorio_Proyecto_TFG_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_Gaming_Desktop_Proyecto_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 9158);
 /* harmony import */ var _index_9ac92660_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-9ac92660.js */ 2141);
 
@@ -730,7 +578,7 @@ const isIonContent = el => el && el.tagName === ION_CONTENT_TAG_NAME;
 
 
 const getScrollElement = /*#__PURE__*/function () {
-  var _ref = (0,_home_adrian_Escritorio_Proyecto_TFG_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
+  var _ref = (0,C_Users_Gaming_Desktop_Proyecto_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
     if (isIonContent(el)) {
       yield new Promise(resolve => (0,_helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__.c)(el, resolve));
       return el.getScrollElement();
@@ -1344,7 +1192,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "h": () => (/* binding */ hostContext),
 /* harmony export */   "o": () => (/* binding */ openURL)
 /* harmony export */ });
-/* harmony import */ var _home_adrian_Escritorio_Proyecto_TFG_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_Gaming_Desktop_Proyecto_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 
 
 /*!
@@ -1383,7 +1231,7 @@ const getClassMap = classes => {
 const SCHEME = /^[a-z][a-z0-9+\-.]*:/;
 
 const openURL = /*#__PURE__*/function () {
-  var _ref = (0,_home_adrian_Escritorio_Proyecto_TFG_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, ev, direction, animation) {
+  var _ref = (0,C_Users_Gaming_Desktop_Proyecto_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, ev, direction, animation) {
     if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
       const router = document.querySelector('ion-router');
 

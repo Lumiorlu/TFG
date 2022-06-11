@@ -302,9 +302,9 @@
     <string name="crop__pick_error">No image sources available</string>
     <string name="crop__saving">Saving picture…</string>
     <string name="crop__wait">Please wait…</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="custom_url_scheme">com.example.app</string>
     <string name="ok">OK</string>
-    <string name="package_name">io.ionic.starter</string>
+    <string name="package_name">com.example.app</string>
     <string name="picture">Picture</string>
     <string name="request_permission">Allow this app to take pictures</string>
     <string name="search_menu_title">Search</string>

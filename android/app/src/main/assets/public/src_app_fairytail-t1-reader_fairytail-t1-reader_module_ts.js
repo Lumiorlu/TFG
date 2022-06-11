@@ -157,7 +157,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \******************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\n\n  <div class=\"images\">\n    <img [src]=\"image\" *ngFor=\"let image of images\" width=\"400\">\n  </div>\n  \n  </ion-content>";
+module.exports = "<ion-content>\r\n\r\n  <div class=\"images\">\r\n    <img [src]=\"image\" *ngFor=\"let image of images\" width=\"400\">\r\n  </div>\r\n  \r\n  </ion-content>";
 
 /***/ })
 

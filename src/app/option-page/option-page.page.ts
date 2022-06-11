@@ -69,7 +69,7 @@ export class OptionPagePage implements OnInit, OnDestroy {
     console.log(userTest);
     if (window.confirm('Do you really want to delete?')) {
       this.authService.deleteUser(userTest).then((res) => {
-        //this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/home');
       });
     }
   }
