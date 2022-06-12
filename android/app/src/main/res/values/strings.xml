@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">RasenGeeks</string>
     <string name="title_activity_main">RasenGeeks</string>
-    <string name="package_name">com.example.app</string>
-    <string name="custom_url_scheme">com.example.app</string>
+    <string name="package_name">com.tfg.app</string>
+    <string name="custom_url_scheme">com.tfg.app</string>
 </resources>

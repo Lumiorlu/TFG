@@ -109,7 +109,28 @@ let OptionPagePage = class OptionPagePage {
         this.successMsg = '';
         this.errorMsg = '';
     }
-    ngOnInit() { }
+    ngOnInit() {
+        /********
+         * asi te subscribis a un observable para leer su valor y usarlo como quieras
+         * lo unico "raro" es que asigno todo a una variable del tipo subscription porque luego me interesa "desuscribirme"
+         * en caso de que cambie de pagina para que se rompa la conexion sino por detras continuaria
+         */
+        this.userSubs$ = this.authService.user$.subscribe((usuario) => {
+            // eslint-disable-next-line max-len
+            // es importante decir que la funcion handler recive un parametro del tipo any sino el compilador cree que no tiene propiedades y llora
+            /*******
+             * si hay algun cambio en este observable, esta funcion handler se volvera a ejecutar y esta asignacion
+             * se volvera a realizar VALE!!!!??
+             */
+            this.userTest = usuario;
+        });
+    }
+    ngOnDestroy() {
+        /********
+         * si utilizas el metodo de subscribe tienes que desuscribite justo ahi de la siguiente forma
+         */
+        this.userSubs$.unsubscribe();
+    }
     logOut() {
         this.authService
             .signoutUser()
@@ -120,13 +141,11 @@ let OptionPagePage = class OptionPagePage {
             console.log(error);
         });
     }
-    delete(user) {
-        console.log(user);
+    delete(userTest) {
+        console.log(userTest);
         if (window.confirm('Do you really want to delete?')) {
-            this.authService.
-                deleteUser(user.uid)
-                .then((res) => {
-                //this.router.navigateByUrl('/home');
+            this.authService.deleteUser(userTest).then((res) => {
+                this.router.navigateByUrl('/home');
             });
         }
     }
@@ -163,7 +182,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \**************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button meu=\"main-content\"></ion-menu-button>\r\n    </ion-buttons>\r\n\r\n    <ion-title>Opciones</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <ion-button shape=\"round\" type=\"submit\" expand=\"block\" (click)=\"logOut()\"> Cerrar sesión </ion-button>\r\n    <ion-button color=\"danger\" shape=\"round\" type=\"submit\" expand=\"block\" (click)=\"delete(user.uid)\"> Borrar cuenta </ion-button>\r\n  \r\n  \r\n\r\n</ion-content>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button meu=\"main-content\"></ion-menu-button>\r\n    </ion-buttons>\r\n\r\n    <ion-title>Opciones</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-button shape=\"round\" type=\"submit\" expand=\"block\" (click)=\"logOut()\">\r\n    Cerrar sesión\r\n  </ion-button>\r\n  <!-- aqui antes pusiste user.uid pero donde mierda esta user de donde lo lee??? si ni siquiera esta como variable de tu componente se entiend??? esto arreglado seria llamando a userTest.uid\r\n    \r\n    hacerlo con async se puede tambien pero como explico mas abajo tienes que declarar un ngIf o en el boton o en el ion-content como para poder usar el alias que le declares al async-->\r\n  <ion-button\r\n    color=\"danger\"\r\n    shape=\"round\"\r\n    type=\"submit\"\r\n    expand=\"block\"\r\n    (click)=\"delete(userTest.uid)\"\r\n  >\r\n    Borrar cuenta\r\n  </ion-button>\r\n\r\n  <!-- Como utilice el metodo de subscribirme y asignar el resultado a una variable del componente pues ya lo puede ver \r\n    si te preguntas porque mierda pongo el \"?\" es porque al principio userTest no esta definido hasta que hago las subscripcion. Entonces el signo lo que hace es NO ACCEDER a la propiedad en este caso \"email\" HASTA que userTest este DEFINIDO\r\n  -->\r\n\r\n  <p>{{userTest?.email}}</p>\r\n\r\n  <!-- aca un ejemplo para que veas todo lo que trae userTest usando el pipe JSON -->\r\n\r\n  <div>{{userTest | json}}</div>\r\n\r\n  <!-- este metodo es el mas complejo pero practico si tu sabes usar esto no necesitas subscribirte ni nada solo usar el observable directamente lo que hago es asignar todo a una variable user que SOLO esta disponible aqui en el html del tag ng-container tambien lo puedes hacer en un div pero recuerda que solo dentro de ese tag podras usarlo.\r\n  \r\n  Un truco puede ser englobar todo en un div o ng-container y ahi hacer esto del async pero corres el riesgo que si no carga el usuario o falla no vez nada asique no lo recomiendo para los que recien empiezan osea ustedes xd-->\r\n\r\n  <ng-container *ngIf=\"(authService.user$ | async) as user\">\r\n    <p>{{user.username}}</p>\r\n  </ng-container>\r\n</ion-content>\r\n";
 
 /***/ })
 

@@ -1,4 +1,0 @@
-capacitor/android/plugins/BuildConfig.java
- capacitor.android.plugins.BuildConfig
-com/jeduan/crop/CropPlugin.java
- com.jeduan.crop.CropPlugin
