@@ -32,7 +32,6 @@ export class RegisterPage implements OnInit {
     return this.userForm.get('password');
   }
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   error_msg = {
     email: [
       {
@@ -71,22 +70,13 @@ export class RegisterPage implements OnInit {
         '',
         Validators.compose([Validators.minLength(8), Validators.required])
       ),
-      /**
-       * nunca va a funcionar nada si no lo agregas en el formulario, cada campo del form queda
-       * bindeado al html a travez del attr formControlName. Es la unica forma de que lo que hagas
-       * en el input afecte al formulario. Ahora el valor de tu formulario será
-       * {
-       *  email:'', password:'', username:''
-       * }
-       * y se completará con lo que rellenes.
-       */
+      
       username: ['', Validators.required],
     });
   }
 
   signUp(value) {
-    //aqui si revisas el ngSubmit el valor de 'value' es el formulario como lo mencioné antes
-    // {username, password, email}
+   
     this.authService.createUser(value).then(
       (response) => {
         this.errorMsg = '';
