@@ -252,17 +252,6 @@ let AuthService = class AuthService {
         this.afs = afs;
         this.router = router;
         this.user$ = this.afAuth.authState.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.switchMap)((user) => {
-            /********
-             * ESTO LEELO A LO ULTIMO
-             *
-             * si ya leiste todo ahora vas a entender mejor este Observable...
-             * me devuelve el usuario authenticado de FIREBASE
-             * peroooo lo intercambio por el de la base de datos ya que tiene las propiedades que me interesan
-             * es facil identificarlo porque el usuario de FIREBASE tiene el UID con el cual lo guarde en la BD
-             * y ahi esta toda la magia de administracion del usuario ya luego lo puede utilizar en todos
-             * lo componentes que quieras porque lo obtienes del local storage o para mi gusto es mejor
-             * injectar el servicio en el compoenente que desees y subscribirte a la property $user
-             */
             if (user) {
                 console.log('User from firebase: ', user);
                 return this.afs.doc(`users/${user.uid}`).valueChanges();
@@ -275,23 +264,12 @@ let AuthService = class AuthService {
         }));
     }
     createUser(value) {
-        /*******************************
-         * value aquí sigue siendo
-         * {username, email, password}
-         */
         return new Promise((resolve, reject) => {
             this.afAuth
-                .createUserWithEmailAndPassword(value.email, value.password) // ahora esto cobra sentido
+                .createUserWithEmailAndPassword(value.email, value.password)
                 .then((res) => {
                 console.log(res.user);
                 // this.sendVerificationMail();
-                /**
-                 * res.user es un USUARIO DE FIREBASE tiene su propia estructura
-                 * lo puedes ver aqui: https://firebase.google.com/docs/reference/js/v8/firebase.User
-                 * luego puedes ver que se lo paso a setUserData pero ahi dentro solo utilizo algunas
-                 * propiedades. Si tu quieres que a ese metodo llegue tu username SE LO TIENES QUE ENVIAR
-                 * y ya sabes donde estas en VALUE
-                 */
                 this.setUserData(res.user, value.username);
                 resolve(res);
             }, (err) => reject(err));
@@ -330,20 +308,7 @@ let AuthService = class AuthService {
         });
     }
     setUserData(user, username) {
-        // fijate que el documento se va a guardar con el UID del usuario de FIREBASE para luego identificarlo
         const userRef = this.afs.doc(`users/${user.uid}`);
-        /**
-         * aqui utilizo el tipo de usuario de FIREBASE porque me interesa usar algunas de sus propiedades
-         * como displayName, photoURL pero luego puedes añadir tantas propiedades como desees
-         * eso si recuerda añadirlas en la interfaz "User" como hice con username y tambien que las propiedades
-         * lleguen a travez de los argumentos de la funcion como hice con username. Si vez que son muchas propiedes
-         * que vas a añadir podes usar un objeto. En plan setUserData(user:any, properties:any)
-         * y luego puedes llamarla asi this.setUserData(res.user, {username:value.username, photo: value.photo, etc})
-         * y ese value es el form no te olvides sino cambiale el nombre
-         *
-         * tambien puedes ver que creo una propiedad uid con el uid del USER DE FIREBASE ese 'id' me va a servir
-         * luego para crear relaciones como en una tabla SQL similar a lo que hice en easy-bank con los movements
-         */
         const userData = {
             uid: user.uid,
             email: user.email,
@@ -388,9 +353,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "environment": () => (/* binding */ environment)
 /* harmony export */ });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
     firebase: {
@@ -403,14 +365,6 @@ const environment = {
         measurementId: 'G-NJ1Z7PXTYY'
     }
 };
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
@@ -713,7 +667,7 @@ module.exports = "/*@media (min-width: 426px) {\n  .menu {\n    max-width: 5%;\n
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" class=\"menu\" menuId=\"first\">\r\n      <ion-header>\r\n        <ion-toolbar color=\"primary\">\r\n          <ion-title>Menú</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-grid *ngIf=\"authService.user$ | async as user\">\r\n          <ion-list>\r\n            <ion-menu-toggle auto-hide=\"false\">\r\n              <p>Bienvenido {{ user.username }}</p>\r\n              <ion-item [routerDirection]=\"'root'\" [routerLink]=\"'/comic-page'\">\r\n                <ion-icon slot=\"start\" [name]=\"'book'\"></ion-icon>\r\n                <ion-label> Cómics </ion-label>\r\n              </ion-item>\r\n              <ion-item [routerDirection]=\"'root'\" [routerLink]=\"'/manga-page'\">\r\n                <ion-icon slot=\"start\" [name]=\"'book'\"></ion-icon>\r\n                <ion-label> Mangas </ion-label>\r\n              </ion-item>\r\n              <ion-item\r\n                [routerDirection]=\"'root'\"\r\n                [routerLink]=\"'/library-page'\"\r\n              >\r\n                <ion-icon slot=\"start\" [name]=\"'library'\"></ion-icon>\r\n                <ion-label> Biblioteca </ion-label>\r\n              </ion-item>\r\n              <ion-item\r\n                [routerDirection]=\"'root'\"\r\n                [routerLink]=\"'/favorites-page'\"\r\n              >\r\n                <ion-icon slot=\"start\" [name]=\"'star'\"></ion-icon>\r\n                <ion-label> Favoritos </ion-label>\r\n              </ion-item>\r\n              <ion-item\r\n                [routerDirection]=\"'root'\"\r\n                [routerLink]=\"'/option-page'\"\r\n              >\r\n                <ion-icon slot=\"start\" [name]=\"'cog'\"></ion-icon>\r\n                <ion-label> Opciones </ion-label>\r\n              </ion-item>\r\n            </ion-menu-toggle>\r\n          </ion-list>\r\n        </ion-grid>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n<!-- <ion-app>\r\n  <ion-menu side=\"start\" menuId=\"first\" contentId=\"main2\">\r\n    <ion-header>\r\n      <ion-toolbar color=\"primary\">\r\n        <ion-title>Menú</ion-title>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <ion-content>\r\n      <ion-list>\r\n        <ion-menu-toggle>\r\n          <ion-button\r\n            (click)=\"onClick()\"\r\n            expand=\"block\"\r\n            fill=\"solid\"\r\n            shape=\"round\"\r\n            routerLink=\"/comic-page\"\r\n          >\r\n            Ir a Comics\r\n          </ion-button>\r\n\r\n          <ion-button\r\n            (click)=\"onClick()\"\r\n            expand=\"block\"\r\n            fill=\"\"\r\n            shape=\"round\"\r\n            routerLink=\"/library-page\"\r\n          >\r\n            Biblioteca\r\n          </ion-button>\r\n\r\n          <ion-button\r\n            (click)=\"onClick()\"\r\n            expand=\"block\"\r\n            fill=\"\"\r\n            shape=\"round\"\r\n            routerLink=\"/favorites-page\"\r\n          >\r\n            Favoritos\r\n          </ion-button>\r\n\r\n          <ion-button\r\n            (click)=\"onClick()\"\r\n            expand=\"block\"\r\n            fill=\"\"\r\n            shape=\"round\"\r\n            routerLink=\"option-page\"\r\n          >\r\n            Ajustes\r\n          </ion-button>\r\n        </ion-menu-toggle>\r\n      </ion-list>\r\n    </ion-content>\r\n  </ion-menu>\r\n  <ion-router-outlet id=\"main2\"></ion-router-outlet>\r\n</ion-app>\r\n\r\n<ion-app>\r\n  <ion-menu side=\"start\" menuId=\"second\" contentId=\"main\">\r\n    <ion-header>\r\n      <ion-toolbar color=\"primary\">\r\n        <ion-title>Menú</ion-title>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <ion-content>\r\n      \r\n        <ion-list>\r\n         >\r\n          <ion-menu-toggle>\r\n            <ion-button\r\n              (click)=\"onClick()\"\r\n              expand=\"block\"\r\n              fill=\"solid\"\r\n              shape=\"round\"\r\n              routerLink=\"/manga-page\"\r\n            >\r\n              Ir a Mangas\r\n            </ion-button>\r\n\r\n            <ion-button\r\n              (click)=\"onClick()\"\r\n              expand=\"block\"\r\n              fill=\"\"\r\n              shape=\"round\"\r\n              routerLink=\"/library-page\"\r\n            >\r\n              Biblioteca\r\n            </ion-button>\r\n\r\n            <ion-button\r\n              (click)=\"onClick()\"\r\n              expand=\"block\"\r\n              fill=\"\"\r\n              shape=\"round\"\r\n              routerLink=\"/favorites-page\"\r\n            >\r\n              Favoritos\r\n            </ion-button>\r\n\r\n            <ion-button\r\n              (click)=\"onClick()\"\r\n              expand=\"block\"\r\n              fill=\"\"\r\n              shape=\"round\"\r\n              routerLink=\"option-page\"\r\n            >\r\n              Ajustes\r\n            </ion-button>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-grid>\r\n    </ion-content>\r\n  </ion-menu>\r\n\r\n  <ion-router-outlet id=\"main\"></ion-router-outlet>\r\n</ion-app> -->\r\n";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" class=\"menu\" menuId=\"first\">\r\n      <ion-header>\r\n        <ion-toolbar color=\"primary\">\r\n          <ion-title>Menú</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-grid *ngIf=\"authService.user$ | async as user\">\r\n          <ion-list>\r\n            <ion-menu-toggle auto-hide=\"false\">\r\n              <p>Bienvenido {{ user.username }}</p>\r\n              <ion-item [routerDirection]=\"'root'\" [routerLink]=\"'/comic-page'\">\r\n                <ion-icon slot=\"start\" [name]=\"'book'\"></ion-icon>\r\n                <ion-label> Cómics </ion-label>\r\n              </ion-item>\r\n              <ion-item [routerDirection]=\"'root'\" [routerLink]=\"'/manga-page'\">\r\n                <ion-icon slot=\"start\" [name]=\"'book'\"></ion-icon>\r\n                <ion-label> Mangas </ion-label>\r\n              </ion-item>\r\n              <ion-item\r\n                [routerDirection]=\"'root'\"\r\n                [routerLink]=\"'/library-page'\"\r\n              >\r\n                <ion-icon slot=\"start\" [name]=\"'library'\"></ion-icon>\r\n                <ion-label> Biblioteca </ion-label>\r\n              </ion-item>\r\n              <ion-item\r\n                [routerDirection]=\"'root'\"\r\n                [routerLink]=\"'/favorites-page'\"\r\n              >\r\n                <ion-icon slot=\"start\" [name]=\"'star'\"></ion-icon>\r\n                <ion-label> Favoritos </ion-label>\r\n              </ion-item>\r\n              <ion-item\r\n                [routerDirection]=\"'root'\"\r\n                [routerLink]=\"'/option-page'\"\r\n              >\r\n                <ion-icon slot=\"start\" [name]=\"'cog'\"></ion-icon>\r\n                <ion-label> Opciones </ion-label>\r\n              </ion-item>\r\n            </ion-menu-toggle>\r\n          </ion-list>\r\n        </ion-grid>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>";
 
 /***/ })
 

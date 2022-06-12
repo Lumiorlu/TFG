@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.tfg.app',
+  appId: 'com.example.app',
   appName: 'RasenGeeks',
   webDir: 'www',
   bundledWebRuntime: false,

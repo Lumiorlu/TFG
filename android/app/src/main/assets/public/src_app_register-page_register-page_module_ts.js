@@ -113,7 +113,6 @@ let RegisterPage = class RegisterPage {
         this.fb = fb;
         this.successMsg = '';
         this.errorMsg = '';
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         this.error_msg = {
             email: [
                 {
@@ -152,21 +151,10 @@ let RegisterPage = class RegisterPage {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
             ])),
             password: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required])),
-            /**
-             * nunca va a funcionar nada si no lo agregas en el formulario, cada campo del form queda
-             * bindeado al html a travez del attr formControlName. Es la unica forma de que lo que hagas
-             * en el input afecte al formulario. Ahora el valor de tu formulario será
-             * {
-             *  email:'', password:'', username:''
-             * }
-             * y se completará con lo que rellenes.
-             */
             username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required],
         });
     }
     signUp(value) {
-        //aqui si revisas el ngSubmit el valor de 'value' es el formulario como lo mencioné antes
-        // {username, password, email}
         this.authService.createUser(value).then((response) => {
             this.errorMsg = '';
             this.successMsg = 'New user created.';
